@@ -30,9 +30,16 @@ namespace BarkodluSatis
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chSatisIadeIslemi = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tBarkod = new System.Windows.Forms.TextBox();
@@ -43,12 +50,14 @@ namespace BarkodluSatis
             this.bNakit = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tGenelToplam = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.tOdenen = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tParaUstu = new System.Windows.Forms.TextBox();
             this.gridSatisListesi = new System.Windows.Forms.DataGridView();
-            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Miktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Toplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button27 = new System.Windows.Forms.Button();
@@ -109,14 +118,16 @@ namespace BarkodluSatis
             this.button47 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.tOdenen = new System.Windows.Forms.TextBox();
-            this.tParaUstu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chSatisIadeIslemi = new System.Windows.Forms.CheckBox();
+            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunGrup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Miktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Toplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KdvTutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AlisFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -125,6 +136,9 @@ namespace BarkodluSatis
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSatisListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -136,9 +150,6 @@ namespace BarkodluSatis
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -188,6 +199,23 @@ namespace BarkodluSatis
             this.panel1.Size = new System.Drawing.Size(542, 94);
             this.panel1.TabIndex = 0;
             // 
+            // chSatisIadeIslemi
+            // 
+            this.chSatisIadeIslemi.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chSatisIadeIslemi.AutoSize = true;
+            this.chSatisIadeIslemi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(7)))));
+            this.chSatisIadeIslemi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(7)))));
+            this.chSatisIadeIslemi.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.chSatisIadeIslemi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chSatisIadeIslemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chSatisIadeIslemi.ForeColor = System.Drawing.Color.White;
+            this.chSatisIadeIslemi.Location = new System.Drawing.Point(10, 10);
+            this.chSatisIadeIslemi.Name = "chSatisIadeIslemi";
+            this.chSatisIadeIslemi.Size = new System.Drawing.Size(110, 28);
+            this.chSatisIadeIslemi.TabIndex = 4;
+            this.chSatisIadeIslemi.Text = "Satış Yapılıyor";
+            this.chSatisIadeIslemi.UseVisualStyleBackColor = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -214,7 +242,8 @@ namespace BarkodluSatis
             this.tBarkod.Location = new System.Drawing.Point(70, 62);
             this.tBarkod.Name = "tBarkod";
             this.tBarkod.Size = new System.Drawing.Size(239, 26);
-            this.tBarkod.TabIndex = 1;
+            this.tBarkod.TabIndex = 0;
+            this.tBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBarkod_KeyDown);
             // 
             // tMiktar
             // 
@@ -222,7 +251,8 @@ namespace BarkodluSatis
             this.tMiktar.Location = new System.Drawing.Point(9, 62);
             this.tMiktar.Name = "tMiktar";
             this.tMiktar.Size = new System.Drawing.Size(43, 26);
-            this.tMiktar.TabIndex = 0;
+            this.tMiktar.TabIndex = 1;
+            this.tMiktar.Text = "1";
             this.tMiktar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel2
@@ -330,6 +360,110 @@ namespace BarkodluSatis
             this.tGenelToplam.Text = "₺0,00";
             this.tGenelToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel12, 1, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 42);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(218, 63);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(163)))), ((int)(((byte)(33)))));
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.tOdenen, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(109, 63);
+            this.tableLayoutPanel11.TabIndex = 0;
+            // 
+            // tOdenen
+            // 
+            this.tOdenen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(163)))), ((int)(((byte)(33)))));
+            this.tOdenen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tOdenen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tOdenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tOdenen.ForeColor = System.Drawing.Color.White;
+            this.tOdenen.Location = new System.Drawing.Point(3, 34);
+            this.tOdenen.Name = "tOdenen";
+            this.tOdenen.Size = new System.Drawing.Size(103, 20);
+            this.tOdenen.TabIndex = 0;
+            this.tOdenen.Text = "0";
+            this.tOdenen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ödenen (F12)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(104)))), ((int)(((byte)(106)))));
+            this.tableLayoutPanel12.ColumnCount = 1;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.tParaUstu, 0, 1);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(109, 0);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(109, 63);
+            this.tableLayoutPanel12.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 31);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Para Üstü";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tParaUstu
+            // 
+            this.tParaUstu.BackColor = System.Drawing.Color.DimGray;
+            this.tParaUstu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tParaUstu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tParaUstu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tParaUstu.ForeColor = System.Drawing.Color.White;
+            this.tParaUstu.Location = new System.Drawing.Point(3, 34);
+            this.tParaUstu.Name = "tParaUstu";
+            this.tParaUstu.Size = new System.Drawing.Size(103, 20);
+            this.tParaUstu.TabIndex = 0;
+            this.tParaUstu.Text = "0";
+            this.tParaUstu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // gridSatisListesi
             // 
             this.gridSatisListesi.AllowUserToAddRows = false;
@@ -347,45 +481,34 @@ namespace BarkodluSatis
             this.gridSatisListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridSatisListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridSatisListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Barkod,
             this.UrunAdi,
+            this.UrunGrup,
+            this.Birim,
             this.Fiyat,
             this.Miktar,
             this.Toplam,
+            this.KdvTutar,
+            this.AlisFiyat,
             this.Sil});
             this.gridSatisListesi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridSatisListesi.EnableHeadersVisualStyles = false;
             this.gridSatisListesi.Location = new System.Drawing.Point(3, 103);
             this.gridSatisListesi.Name = "gridSatisListesi";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSatisListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridSatisListesi.RowHeadersVisible = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridSatisListesi.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gridSatisListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSatisListesi.Size = new System.Drawing.Size(542, 441);
             this.gridSatisListesi.TabIndex = 2;
-            // 
-            // UrunAdi
-            // 
-            this.UrunAdi.HeaderText = "Ürün Adı";
-            this.UrunAdi.Name = "UrunAdi";
-            // 
-            // Fiyat
-            // 
-            this.Fiyat.HeaderText = "Fiyat";
-            this.Fiyat.Name = "Fiyat";
-            // 
-            // Miktar
-            // 
-            this.Miktar.HeaderText = "Miktar";
-            this.Miktar.Name = "Miktar";
-            // 
-            // Toplam
-            // 
-            this.Toplam.HeaderText = "Toplam";
-            this.Toplam.Name = "Toplam";
-            // 
-            // Sil
-            // 
-            this.Sil.HeaderText = "Sil";
-            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
-            this.Sil.Name = "Sil";
             // 
             // splitContainer2
             // 
@@ -1395,126 +1518,69 @@ namespace BarkodluSatis
             this.dataGridViewImageColumn1.Image = global::BarkodluSatis.Properties.Resources.remove;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
-            // tableLayoutPanel10
+            // Barkod
             // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel12, 1, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 42);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(218, 63);
-            this.tableLayoutPanel10.TabIndex = 1;
+            this.Barkod.HeaderText = "Barkod";
+            this.Barkod.Name = "Barkod";
             // 
-            // tableLayoutPanel11
+            // UrunAdi
             // 
-            this.tableLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(163)))), ((int)(((byte)(33)))));
-            this.tableLayoutPanel11.ColumnCount = 1;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Controls.Add(this.tOdenen, 0, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(109, 63);
-            this.tableLayoutPanel11.TabIndex = 0;
+            this.UrunAdi.HeaderText = "Ürün Adı";
+            this.UrunAdi.Name = "UrunAdi";
             // 
-            // tableLayoutPanel12
+            // UrunGrup
             // 
-            this.tableLayoutPanel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(104)))), ((int)(((byte)(106)))));
-            this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.tParaUstu, 0, 1);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(109, 0);
-            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(109, 63);
-            this.tableLayoutPanel12.TabIndex = 1;
+            this.UrunGrup.HeaderText = "Ürün Grup";
+            this.UrunGrup.Name = "UrunGrup";
+            this.UrunGrup.Visible = false;
             // 
-            // tOdenen
+            // Birim
             // 
-            this.tOdenen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(163)))), ((int)(((byte)(33)))));
-            this.tOdenen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tOdenen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tOdenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tOdenen.ForeColor = System.Drawing.Color.White;
-            this.tOdenen.Location = new System.Drawing.Point(3, 34);
-            this.tOdenen.Name = "tOdenen";
-            this.tOdenen.Size = new System.Drawing.Size(103, 20);
-            this.tOdenen.TabIndex = 0;
-            this.tOdenen.Text = "0";
-            this.tOdenen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Birim.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Birim.HeaderText = "Birim";
+            this.Birim.Name = "Birim";
             // 
-            // tParaUstu
+            // Fiyat
             // 
-            this.tParaUstu.BackColor = System.Drawing.Color.DimGray;
-            this.tParaUstu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tParaUstu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tParaUstu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tParaUstu.ForeColor = System.Drawing.Color.White;
-            this.tParaUstu.Location = new System.Drawing.Point(3, 34);
-            this.tParaUstu.Name = "tParaUstu";
-            this.tParaUstu.Size = new System.Drawing.Size(103, 20);
-            this.tParaUstu.TabIndex = 0;
-            this.tParaUstu.Text = "0";
-            this.tParaUstu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Fiyat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Fiyat.HeaderText = "Fiyat";
+            this.Fiyat.Name = "Fiyat";
             // 
-            // label1
+            // Miktar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ödenen (F12)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Miktar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Miktar.HeaderText = "Miktar";
+            this.Miktar.Name = "Miktar";
             // 
-            // label2
+            // Toplam
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Para Üstü";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Toplam.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Toplam.HeaderText = "Toplam";
+            this.Toplam.Name = "Toplam";
             // 
-            // chSatisIadeIslemi
+            // KdvTutar
             // 
-            this.chSatisIadeIslemi.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chSatisIadeIslemi.AutoSize = true;
-            this.chSatisIadeIslemi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(7)))));
-            this.chSatisIadeIslemi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(7)))));
-            this.chSatisIadeIslemi.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.chSatisIadeIslemi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chSatisIadeIslemi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chSatisIadeIslemi.ForeColor = System.Drawing.Color.White;
-            this.chSatisIadeIslemi.Location = new System.Drawing.Point(10, 10);
-            this.chSatisIadeIslemi.Name = "chSatisIadeIslemi";
-            this.chSatisIadeIslemi.Size = new System.Drawing.Size(110, 28);
-            this.chSatisIadeIslemi.TabIndex = 4;
-            this.chSatisIadeIslemi.Text = "Satış Yapılıyor";
-            this.chSatisIadeIslemi.UseVisualStyleBackColor = false;
+            this.KdvTutar.HeaderText = "Kdv Tutarı";
+            this.KdvTutar.Name = "KdvTutar";
+            this.KdvTutar.Visible = false;
+            // 
+            // AlisFiyat
+            // 
+            this.AlisFiyat.HeaderText = "Alış Fiyat";
+            this.AlisFiyat.Name = "AlisFiyat";
+            this.AlisFiyat.Visible = false;
+            // 
+            // Sil
+            // 
+            this.Sil.HeaderText = "Sil";
+            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
+            this.Sil.Name = "Sil";
             // 
             // fSatis
             // 
@@ -1536,6 +1602,11 @@ namespace BarkodluSatis
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSatisListesi)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -1548,11 +1619,6 @@ namespace BarkodluSatis
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1632,11 +1698,6 @@ namespace BarkodluSatis
         private System.Windows.Forms.Button button48;
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Miktar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Toplam;
-        private System.Windows.Forms.DataGridViewImageColumn Sil;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
@@ -1646,6 +1707,16 @@ namespace BarkodluSatis
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tParaUstu;
         private System.Windows.Forms.CheckBox chSatisIadeIslemi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunAdi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UrunGrup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fiyat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Miktar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Toplam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KdvTutar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AlisFiyat;
+        private System.Windows.Forms.DataGridViewImageColumn Sil;
     }
 }
 

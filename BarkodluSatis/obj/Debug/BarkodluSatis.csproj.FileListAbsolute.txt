@@ -8,3 +8,10 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.CoreCompileInputs.cache
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.exe
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.pdb
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\BarkodluDb.mdf
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\BarkodluDb_log.ldf
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.dll
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.xml
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.CopyComplete
