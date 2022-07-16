@@ -15,3 +15,4 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramewor
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.xml
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.CopyComplete
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.fHizliButonUrunEkle.resources

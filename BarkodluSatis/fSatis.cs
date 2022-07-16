@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarkodluSatis.Sayfalar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -127,6 +128,84 @@ namespace BarkodluSatis
                     tBarkod.Focus();
                 }
             }
+        }
+
+        private void fSatis_Load(object sender, EventArgs e)
+        {
+            HizliButonDoldur();
+        }
+
+        private void HizliButonDoldur()
+        {
+            var hizliurun = db.HizliUrun.ToList();
+            foreach (var item in hizliurun)
+            {
+                Button bH = this.Controls.Find("bHizli" + item.Id, true).FirstOrDefault() as Button;
+                if (bH != null)
+                {
+                    double fiyat = Islemler.Islemler.DoubleYap(item.Fiyat.ToString());
+                    bH.Text = item.UrunAd + "\n" + fiyat.ToString("C2");
+                }
+            }
+        }
+        private void HizliButonClick(object sender)
+        {
+            Button b = (Button)sender;
+            int butonId = Convert.ToInt16(b.Name.ToString().Substring(6, b.Name.Length - 6));
+
+            if (b.Text.ToString().StartsWith("-"))
+            {
+                fHizliButonUrunEkle f = new fHizliButonUrunEkle();
+                f.lblButonId.Text = butonId.ToString();
+                f.ShowDialog();
+            }
+            else
+            {
+
+                var urunbarkod = db.HizliUrun.Where(x => x.Id == butonId).Select(x => x.Barkod).FirstOrDefault();
+                var urun = db.Urun.Where(x => x.Barkod == urunbarkod).FirstOrDefault();
+                ListeyeUrunGetir(urun, urunbarkod, 1);
+                GenelToplam();
+            }
+
+        }
+
+        // Tüm bHizli butonları için geçerli
+        private void bHizli1_Click(object sender, EventArgs e)
+        {
+            HizliButonClick(sender);
+        }
+
+        private void bh_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Button b = (Button)sender;
+                if (!b.Text.StartsWith("-"))
+                {
+                    int butonid = Convert.ToInt16(b.Name.ToString().Substring(6, b.Name.Length - 6));
+                    ContextMenuStrip s = new ContextMenuStrip();
+                    ToolStripMenuItem sil = new ToolStripMenuItem();
+                    sil.Text = "Temizle - Buton No : " + butonid.ToString();
+                    sil.Click += Sil_Click;
+                    s.Items.Add(sil);
+                    this.ContextMenuStrip = s;
+                }
+            }
+        }
+
+        private void Sil_Click(object sender, EventArgs e)
+        {
+            
+            int butonid = Convert.ToInt16(sender.ToString().Substring(20, sender.ToString().Length - 20));
+            var guncelle = db.HizliUrun.Find(butonid);
+            guncelle.Barkod = "-";
+            guncelle.UrunAd = "-";
+            guncelle.Fiyat = 0;
+            db.SaveChanges();
+            Button b = this.Controls.Find("bHizli" + butonid, true).FirstOrDefault() as Button;
+            double fiyat = 0;
+            b.Text = "-" + "\n" + fiyat.ToString("C2");
         }
     }
 }

@@ -6,7 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9fa0b1c9a15a4403a861adf84cdea162" Name="Diagram1">
         <EntityTypeShape EntityType="BarkodluDbModel.Urun" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BarkodluDbModel.Terazi" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BarkodluDbModel.Terazi" Width="1.5" PointX="2.875" PointY="0.75" />
+        <EntityTypeShape EntityType="BarkodluDbModel.HizliUrun" Width="1.5" PointX="2.875" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
