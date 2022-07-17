@@ -340,5 +340,45 @@ namespace BarkodluSatis
         {
             Temizle();
         }
+
+        private void SatisYap(string odemesekli)
+        {
+            int satirsayisi = gridSatisListesi.Rows.Count;
+            bool satisiade = chSatisIadeIslemi.Checked;
+            double alisfiyattoplam = 0;
+
+            if (satirsayisi > 0)
+            {
+                int? islemno = db.Islem.First().IslemNo;
+                Satis satis = new Satis();
+                for (int i = 0; i < satirsayisi; i++)
+                {
+                    satis.IslemNo = islemno;
+                    satis.UrunAd = gridSatisListesi.Rows[i].Cells["UrunAdi"].Value.ToString();
+                    satis.UrunGrup = gridSatisListesi.Rows[i].Cells["UrunGrup"].Value.ToString();
+                    satis.Barkod = gridSatisListesi.Rows[i].Cells["Barkod"].Value.ToString();
+                    satis.Birim = gridSatisListesi.Rows[i].Cells["Birim"].Value.ToString();
+                    satis.AlisFiyat = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["AlisFiyat"].Value.ToString());
+                    satis.SatisFiyat = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Fiyat"].Value.ToString());
+                    satis.Miktar = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
+                    satis.Toplam = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Toplam"].Value.ToString());
+                    satis.KdvTutari = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["KdvTutar"].Value.ToString()) * Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
+                    satis.OdemeSekli = odemesekli;
+                    satis.Iade = satisiade;
+                    satis.Tarih = DateTime.Now;
+                    satis.Kullanici = lKullanici.Text;
+
+                    db.Satis.Add(satis);
+                    db.SaveChanges();
+
+
+                }
+            }
+        }
+
+        private void bNakit_Click(object sender, EventArgs e)
+        {
+            SatisYap("Nakit");
+        }
     }
 }
