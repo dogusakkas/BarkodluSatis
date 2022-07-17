@@ -106,6 +106,7 @@ namespace BarkodluSatis
                 toplam += Convert.ToDouble(gridSatisListesi.Rows[i].Cells["Toplam"].Value);
             }
             tGenelToplam.Text = toplam.ToString("C2");
+            tMiktar.Text = 1.ToString();
             tBarkod.Clear();
             tBarkod.Focus();
         }
@@ -133,6 +134,13 @@ namespace BarkodluSatis
         private void fSatis_Load(object sender, EventArgs e)
         {
             HizliButonDoldur();
+
+            b5.Text = 5.ToString("C2");
+            b10.Text = 10.ToString("C2");
+            b20.Text = 20.ToString("C2");
+            b50.Text = 50.ToString("C2");
+            b100.Text = 100.ToString("C2");
+            b200.Text = 200.ToString("C2");
         }
 
         private void HizliButonDoldur()
@@ -164,7 +172,7 @@ namespace BarkodluSatis
 
                 var urunbarkod = db.HizliUrun.Where(x => x.Id == butonId).Select(x => x.Barkod).FirstOrDefault();
                 var urun = db.Urun.Where(x => x.Barkod == urunbarkod).FirstOrDefault();
-                ListeyeUrunGetir(urun, urunbarkod, 1);
+                ListeyeUrunGetir(urun, urunbarkod, Convert.ToDouble(tMiktar.Text));
                 GenelToplam();
             }
 
@@ -196,7 +204,7 @@ namespace BarkodluSatis
 
         private void Sil_Click(object sender, EventArgs e)
         {
-            
+
             int butonid = Convert.ToInt16(sender.ToString().Substring(20, sender.ToString().Length - 20));
             var guncelle = db.HizliUrun.Find(butonid);
             guncelle.Barkod = "-";
@@ -206,6 +214,131 @@ namespace BarkodluSatis
             Button b = this.Controls.Find("bHizli" + butonid, true).FirstOrDefault() as Button;
             double fiyat = 0;
             b.Text = "-" + "\n" + fiyat.ToString("C2");
+        }
+
+        //Rakamlar bölümü
+        private void bNx_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Text == ",")
+            {
+                int virgul = tNumarator.Text.Count(x => x == ',');
+                if (virgul < 1)
+                {
+                    tNumarator.Text += b.Text;
+                }
+            }
+            else if (b.Text == "<")
+            {
+                if (tNumarator.Text.Length > 0)
+                {
+                    tNumarator.Text = tNumarator.Text.Substring(0, tNumarator.Text.Length - 1);
+                }
+            }
+            else
+            {
+                tNumarator.Text += b.Text;
+            }
+        }
+
+        private void bAdet_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                tMiktar.Text = tNumarator.Text;
+                tNumarator.Clear();
+                tBarkod.Clear();
+                tBarkod.Focus();
+            }
+        }
+
+        private void bOdenen_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                double sonuc = Islemler.Islemler.DoubleYap(tNumarator.Text) - Islemler.Islemler.DoubleYap(tGenelToplam.Text);
+                tParaUstu.Text = sonuc.ToString("C2");
+                tNumarator.Clear();
+                tBarkod.Focus();
+            }
+        }
+
+        private void bBarkod_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "" && tNumarator.Text.Count() > 2)
+            {
+                if (db.Urun.Any(x => x.Barkod == tNumarator.Text))
+                {
+                    var urun = db.Urun.Where(x => x.Barkod == tNumarator.Text).FirstOrDefault();
+                    ListeyeUrunGetir(urun, tNumarator.Text, Convert.ToDouble(tMiktar.Text));
+                    GenelToplam();
+                    tNumarator.Clear();
+                    tBarkod.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Ürün ekleme sayfası");
+                }
+            }
+        }
+
+        private void bParaUstuHesapla_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            double sonuc = Islemler.Islemler.DoubleYap(b.Text) - Islemler.Islemler.DoubleYap(tGenelToplam.Text);
+            tParaUstu.Text = sonuc.ToString("C2");
+        }
+
+        private void bDigerUrun_Click(object sender, EventArgs e)
+        {
+            if (tNumarator.Text != "")
+            {
+                int satirsayisi = gridSatisListesi.Rows.Count;
+                gridSatisListesi.Rows.Add();
+                gridSatisListesi.Rows[satirsayisi].Cells["Barkod"].Value = "111111111116";
+                gridSatisListesi.Rows[satirsayisi].Cells["UrunAdi"].Value = "Barkodsuz Ürün";
+                gridSatisListesi.Rows[satirsayisi].Cells["UrunGrup"].Value = "Barkodsuz Ürün";
+                gridSatisListesi.Rows[satirsayisi].Cells["Birim"].Value = "Adet";
+                gridSatisListesi.Rows[satirsayisi].Cells["Miktar"].Value = 1;
+                gridSatisListesi.Rows[satirsayisi].Cells["Fiyat"].Value = Convert.ToDouble(tNumarator.Text);
+                gridSatisListesi.Rows[satirsayisi].Cells["KdvTutar"].Value = 0;
+                gridSatisListesi.Rows[satirsayisi].Cells["Toplam"].Value = Convert.ToDouble(tNumarator.Text);
+                GenelToplam();
+                tNumarator.Clear();
+                tBarkod.Focus();
+            }
+        }
+
+        private void bIade_Click(object sender, EventArgs e)
+        {
+            if (chSatisIadeIslemi.Checked)
+            {
+                chSatisIadeIslemi.Checked = false;
+                chSatisIadeIslemi.Text = "Satış Yapılıyor";
+            }
+            else
+            {
+                chSatisIadeIslemi.Checked = true;
+                chSatisIadeIslemi.Text = "İade İşlemi Yapılıyor";
+            }
+        }
+
+        private void Temizle()
+        {
+            tMiktar.Text = 1.ToString();
+            tBarkod.Clear();
+            tOdenen.Text = 0.ToString();
+            tParaUstu.Text = 0.ToString();
+            tGenelToplam.Text = 0.ToString("C2");
+            chSatisIadeIslemi.Checked = false;
+            tNumarator.Clear();
+            gridSatisListesi.Rows.Clear();
+
+            tBarkod.Focus();
+        }
+        private void bTemizle_Click(object sender, EventArgs e)
+        {
+            Temizle();
         }
     }
 }
