@@ -39,6 +39,9 @@ namespace BarkodluSatis
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lNakit = new System.Windows.Forms.Label();
+            this.lKart = new System.Windows.Forms.Label();
+            this.lKullanici = new System.Windows.Forms.Label();
             this.chSatisIadeIslemi = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +61,16 @@ namespace BarkodluSatis
             this.label2 = new System.Windows.Forms.Label();
             this.tParaUstu = new System.Windows.Forms.TextBox();
             this.gridSatisListesi = new System.Windows.Forms.DataGridView();
+            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UrunGrup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Miktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Toplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KdvTutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AlisFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.bHizli25 = new System.Windows.Forms.Button();
@@ -118,17 +131,6 @@ namespace BarkodluSatis
             this.button47 = new System.Windows.Forms.Button();
             this.bDigerUrun = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lKullanici = new System.Windows.Forms.Label();
-            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunAdi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UrunGrup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Miktar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Toplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KdvTutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AlisFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -189,6 +191,8 @@ namespace BarkodluSatis
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lNakit);
+            this.panel1.Controls.Add(this.lKart);
             this.panel1.Controls.Add(this.lKullanici);
             this.panel1.Controls.Add(this.chSatisIadeIslemi);
             this.panel1.Controls.Add(this.label6);
@@ -200,6 +204,34 @@ namespace BarkodluSatis
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(542, 94);
             this.panel1.TabIndex = 0;
+            // 
+            // lNakit
+            // 
+            this.lNakit.AutoSize = true;
+            this.lNakit.Location = new System.Drawing.Point(399, 46);
+            this.lNakit.Name = "lNakit";
+            this.lNakit.Size = new System.Drawing.Size(32, 13);
+            this.lNakit.TabIndex = 7;
+            this.lNakit.Text = "Nakit";
+            // 
+            // lKart
+            // 
+            this.lKart.AutoSize = true;
+            this.lKart.Location = new System.Drawing.Point(357, 46);
+            this.lKart.Name = "lKart";
+            this.lKart.Size = new System.Drawing.Size(26, 13);
+            this.lKart.TabIndex = 6;
+            this.lKart.Text = "Kart";
+            // 
+            // lKullanici
+            // 
+            this.lKullanici.AutoSize = true;
+            this.lKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lKullanici.Location = new System.Drawing.Point(473, 17);
+            this.lKullanici.Name = "lKullanici";
+            this.lKullanici.Size = new System.Drawing.Size(49, 17);
+            this.lKullanici.TabIndex = 5;
+            this.lKullanici.Text = "Doğuş";
             // 
             // chSatisIadeIslemi
             // 
@@ -311,6 +343,7 @@ namespace BarkodluSatis
             this.bKart.Text = "Kredi Kartı\r\n(F2)";
             this.bKart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bKart.UseVisualStyleBackColor = false;
+            this.bKart.Click += new System.EventHandler(this.bKart_Click);
             // 
             // bNakit
             // 
@@ -515,6 +548,70 @@ namespace BarkodluSatis
             this.gridSatisListesi.Size = new System.Drawing.Size(542, 441);
             this.gridSatisListesi.TabIndex = 2;
             this.gridSatisListesi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridSatisListesi_CellContentClick);
+            // 
+            // Barkod
+            // 
+            this.Barkod.HeaderText = "Barkod";
+            this.Barkod.Name = "Barkod";
+            // 
+            // UrunAdi
+            // 
+            this.UrunAdi.HeaderText = "Ürün Adı";
+            this.UrunAdi.Name = "UrunAdi";
+            // 
+            // UrunGrup
+            // 
+            this.UrunGrup.HeaderText = "Ürün Grup";
+            this.UrunGrup.Name = "UrunGrup";
+            this.UrunGrup.Visible = false;
+            // 
+            // Birim
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Birim.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Birim.HeaderText = "Birim";
+            this.Birim.Name = "Birim";
+            // 
+            // Fiyat
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Fiyat.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Fiyat.HeaderText = "Fiyat";
+            this.Fiyat.Name = "Fiyat";
+            // 
+            // Miktar
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Miktar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Miktar.HeaderText = "Miktar";
+            this.Miktar.Name = "Miktar";
+            // 
+            // Toplam
+            // 
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Toplam.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Toplam.HeaderText = "Toplam";
+            this.Toplam.Name = "Toplam";
+            // 
+            // KdvTutar
+            // 
+            this.KdvTutar.HeaderText = "Kdv Tutarı";
+            this.KdvTutar.Name = "KdvTutar";
+            this.KdvTutar.Visible = false;
+            // 
+            // AlisFiyat
+            // 
+            this.AlisFiyat.HeaderText = "Alış Fiyat";
+            this.AlisFiyat.Name = "AlisFiyat";
+            this.AlisFiyat.Visible = false;
+            // 
+            // Sil
+            // 
+            this.Sil.HeaderText = "Sil";
+            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
+            this.Sil.Name = "Sil";
             // 
             // splitContainer2
             // 
@@ -1599,80 +1696,6 @@ namespace BarkodluSatis
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 77;
             // 
-            // lKullanici
-            // 
-            this.lKullanici.AutoSize = true;
-            this.lKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lKullanici.Location = new System.Drawing.Point(473, 17);
-            this.lKullanici.Name = "lKullanici";
-            this.lKullanici.Size = new System.Drawing.Size(49, 17);
-            this.lKullanici.TabIndex = 5;
-            this.lKullanici.Text = "Doğuş";
-            // 
-            // Barkod
-            // 
-            this.Barkod.HeaderText = "Barkod";
-            this.Barkod.Name = "Barkod";
-            // 
-            // UrunAdi
-            // 
-            this.UrunAdi.HeaderText = "Ürün Adı";
-            this.UrunAdi.Name = "UrunAdi";
-            // 
-            // UrunGrup
-            // 
-            this.UrunGrup.HeaderText = "Ürün Grup";
-            this.UrunGrup.Name = "UrunGrup";
-            this.UrunGrup.Visible = false;
-            // 
-            // Birim
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Birim.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Birim.HeaderText = "Birim";
-            this.Birim.Name = "Birim";
-            // 
-            // Fiyat
-            // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Fiyat.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Fiyat.HeaderText = "Fiyat";
-            this.Fiyat.Name = "Fiyat";
-            // 
-            // Miktar
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Miktar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Miktar.HeaderText = "Miktar";
-            this.Miktar.Name = "Miktar";
-            // 
-            // Toplam
-            // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.Toplam.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Toplam.HeaderText = "Toplam";
-            this.Toplam.Name = "Toplam";
-            // 
-            // KdvTutar
-            // 
-            this.KdvTutar.HeaderText = "Kdv Tutarı";
-            this.KdvTutar.Name = "KdvTutar";
-            this.KdvTutar.Visible = false;
-            // 
-            // AlisFiyat
-            // 
-            this.AlisFiyat.HeaderText = "Alış Fiyat";
-            this.AlisFiyat.Name = "AlisFiyat";
-            this.AlisFiyat.Visible = false;
-            // 
-            // Sil
-            // 
-            this.Sil.HeaderText = "Sil";
-            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
-            this.Sil.Name = "Sil";
-            // 
             // fSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1810,6 +1833,8 @@ namespace BarkodluSatis
         private System.Windows.Forms.DataGridViewTextBoxColumn KdvTutar;
         private System.Windows.Forms.DataGridViewTextBoxColumn AlisFiyat;
         private System.Windows.Forms.DataGridViewImageColumn Sil;
+        private System.Windows.Forms.Label lNakit;
+        private System.Windows.Forms.Label lKart;
     }
 }
 

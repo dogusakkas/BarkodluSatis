@@ -82,7 +82,8 @@
     <Compile Include="Islem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Islemler\Islemler.cs" />
+    <Compile Include="Islemler\Double.cs" />
+    <Compile Include="Islemler\Stok.cs" />
     <Compile Include="IslemOzet.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -151,7 +151,7 @@ namespace BarkodluSatis
                 Button bH = this.Controls.Find("bHizli" + item.Id, true).FirstOrDefault() as Button;
                 if (bH != null)
                 {
-                    double fiyat = Islemler.Islemler.DoubleYap(item.Fiyat.ToString());
+                    double fiyat = Islemler.Double.DoubleYap(item.Fiyat.ToString());
                     bH.Text = item.UrunAd + "\n" + fiyat.ToString("C2");
                 }
             }
@@ -256,7 +256,7 @@ namespace BarkodluSatis
         {
             if (tNumarator.Text != "")
             {
-                double sonuc = Islemler.Islemler.DoubleYap(tNumarator.Text) - Islemler.Islemler.DoubleYap(tGenelToplam.Text);
+                double sonuc = Islemler.Double.DoubleYap(tNumarator.Text) - Islemler.Double.DoubleYap(tGenelToplam.Text);
                 tParaUstu.Text = sonuc.ToString("C2");
                 tNumarator.Clear();
                 tBarkod.Focus();
@@ -285,7 +285,7 @@ namespace BarkodluSatis
         private void bParaUstuHesapla_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            double sonuc = Islemler.Islemler.DoubleYap(b.Text) - Islemler.Islemler.DoubleYap(tGenelToplam.Text);
+            double sonuc = Islemler.Double.DoubleYap(b.Text) - Islemler.Double.DoubleYap(tGenelToplam.Text);
             tParaUstu.Text = sonuc.ToString("C2");
         }
 
@@ -358,27 +358,89 @@ namespace BarkodluSatis
                     satis.UrunGrup = gridSatisListesi.Rows[i].Cells["UrunGrup"].Value.ToString();
                     satis.Barkod = gridSatisListesi.Rows[i].Cells["Barkod"].Value.ToString();
                     satis.Birim = gridSatisListesi.Rows[i].Cells["Birim"].Value.ToString();
-                    satis.AlisFiyat = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["AlisFiyat"].Value.ToString());
-                    satis.SatisFiyat = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Fiyat"].Value.ToString());
-                    satis.Miktar = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
-                    satis.Toplam = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Toplam"].Value.ToString());
-                    satis.KdvTutari = Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["KdvTutar"].Value.ToString()) * Islemler.Islemler.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
+                    satis.AlisFiyat = Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["AlisFiyat"].Value.ToString());
+                    satis.SatisFiyat = Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Fiyat"].Value.ToString());
+                    satis.Miktar = Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
+                    satis.Toplam = Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Toplam"].Value.ToString());
+                    satis.KdvTutari = Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["KdvTutar"].Value.ToString()) * Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString());
                     satis.OdemeSekli = odemesekli;
                     satis.Iade = satisiade;
                     satis.Tarih = DateTime.Now;
                     satis.Kullanici = lKullanici.Text;
 
+
                     db.Satis.Add(satis);
                     db.SaveChanges();
 
 
+                    if (!satisiade)
+                    {
+                        Islemler.Stok.StokAzalt(gridSatisListesi.Rows[i].Cells["Barkod"].Value.ToString(), Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString()));
+                    }
+                    else
+                    {
+                        Islemler.Stok.StokArtır(gridSatisListesi.Rows[i].Cells["Barkod"].Value.ToString(), Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["Miktar"].Value.ToString()));
+                    }
+
+                    alisfiyattoplam += Islemler.Double.DoubleYap(gridSatisListesi.Rows[i].Cells["AlisFiyat"].Value.ToString());
                 }
+
+                IslemOzet io = new IslemOzet();
+                io.IslemNo = islemno;
+                io.Iade = satisiade;
+                io.AlisFiyatToplam = alisfiyattoplam;
+                io.Gelir = false;
+                io.Gider = false;
+                if (!satisiade)
+                {
+                    io.Aciklama = odemesekli + " Satış";
+                }
+                else
+                {
+                    io.Aciklama = "İade işlemi (" + odemesekli + ")";
+                }
+
+                io.OdemeSekli = odemesekli;
+                io.Kullanici = lKullanici.Text;
+                io.Tarih = DateTime.Now;
+
+                switch (odemesekli)
+                {
+                    case "Nakit":
+                        io.Nakit = Islemler.Double.DoubleYap(tGenelToplam.Text);
+                        io.Kart = 0;
+                        break;
+
+                    case "Kart":
+                        io.Nakit = 0;
+                        io.Kart = Islemler.Double.DoubleYap(tGenelToplam.Text);
+                        break;
+
+                    case "Kart-Nakit":
+                        io.Nakit = Islemler.Double.DoubleYap(lNakit.Text);
+                        io.Kart = Islemler.Double.DoubleYap(lKart.Text);
+                        break;
+                }
+
+                db.IslemOzet.Add(io);
+                db.SaveChanges();
+
+                var islemnoartir = db.Islem.First();
+                islemnoartir.IslemNo += 1;
+                db.SaveChanges();
+
+                MessageBox.Show("Fiş yazdırma ekranı");
             }
         }
 
         private void bNakit_Click(object sender, EventArgs e)
         {
             SatisYap("Nakit");
+        }
+
+        private void bKart_Click(object sender, EventArgs e)
+        {
+            SatisYap("Kart");
         }
     }
 }
