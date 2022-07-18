@@ -341,7 +341,7 @@ namespace BarkodluSatis
             Temizle();
         }
 
-        private void SatisYap(string odemesekli)
+        public void SatisYap(string odemesekli)
         {
             int satirsayisi = gridSatisListesi.Rows.Count;
             bool satisiade = chSatisIadeIslemi.Checked;
@@ -441,6 +441,27 @@ namespace BarkodluSatis
         private void bKart_Click(object sender, EventArgs e)
         {
             SatisYap("Kart");
+        }
+
+        private void bKartNakit_Click(object sender, EventArgs e)
+        {
+            int satirsayisi = gridSatisListesi.Rows.Count;
+
+            if (satirsayisi > 0)
+            {
+                fNakitKart fnk = new fNakitKart();
+                fnk.Show();
+            }
+            
+        }
+
+        // Miktar ve Numaratör Textboxları için GEÇERLİDİR.
+        private void tNumarator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
