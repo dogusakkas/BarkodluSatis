@@ -304,14 +304,14 @@ namespace BarkodluSatis.Sayfalar
             // 
             // bEnter
             // 
-            this.bEnter.BackColor = System.Drawing.Color.Tomato;
+            this.bEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(17)))), ((int)(((byte)(66)))));
             this.bEnter.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
             this.bEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.bEnter.ForeColor = System.Drawing.Color.White;
             this.bEnter.Image = global::BarkodluSatis.Properties.Resources.enter;
             this.bEnter.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bEnter.Location = new System.Drawing.Point(269, 93);
+            this.bEnter.Location = new System.Drawing.Point(265, 93);
             this.bEnter.Margin = new System.Windows.Forms.Padding(1);
             this.bEnter.Name = "bEnter";
             this.bEnter.Size = new System.Drawing.Size(106, 234);

@@ -29,13 +29,20 @@ namespace BarkodluSatis
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,6 +55,9 @@ namespace BarkodluSatis
             this.tBarkod = new System.Windows.Forms.TextBox();
             this.tMiktar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.bKartNakit = new System.Windows.Forms.Button();
+            this.bKart = new System.Windows.Forms.Button();
+            this.bNakit = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tGenelToplam = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,6 +77,7 @@ namespace BarkodluSatis
             this.Toplam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KdvTutar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AlisFiyat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.bHizli25 = new System.Windows.Forms.Button();
@@ -124,13 +135,20 @@ namespace BarkodluSatis
             this.bOdenen = new System.Windows.Forms.Button();
             this.bIade = new System.Windows.Forms.Button();
             this.bBarkod = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
+            this.bIslemBeklet = new System.Windows.Forms.Button();
             this.bDigerUrun = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.bKartNakit = new System.Windows.Forms.Button();
-            this.bKart = new System.Windows.Forms.Button();
-            this.bNakit = new System.Windows.Forms.Button();
-            this.Sil = new System.Windows.Forms.DataGridViewImageColumn();
+            this.gridBekle = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -153,6 +171,7 @@ namespace BarkodluSatis
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBekle)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -191,6 +210,7 @@ namespace BarkodluSatis
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gridBekle);
             this.panel1.Controls.Add(this.lNakit);
             this.panel1.Controls.Add(this.lKart);
             this.panel1.Controls.Add(this.lKullanici);
@@ -311,6 +331,63 @@ namespace BarkodluSatis
             this.tableLayoutPanel2.Size = new System.Drawing.Size(542, 106);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
+            // bKartNakit
+            // 
+            this.bKartNakit.BackColor = System.Drawing.Color.Olive;
+            this.bKartNakit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bKartNakit.FlatAppearance.BorderColor = System.Drawing.Color.Olive;
+            this.bKartNakit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bKartNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bKartNakit.ForeColor = System.Drawing.Color.White;
+            this.bKartNakit.Image = global::BarkodluSatis.Properties.Resources.credit_card;
+            this.bKartNakit.Location = new System.Drawing.Point(217, 1);
+            this.bKartNakit.Margin = new System.Windows.Forms.Padding(1);
+            this.bKartNakit.Name = "bKartNakit";
+            this.bKartNakit.Size = new System.Drawing.Size(106, 104);
+            this.bKartNakit.TabIndex = 2;
+            this.bKartNakit.Text = "Kart - Nakit\r\n(F3)";
+            this.bKartNakit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bKartNakit.UseVisualStyleBackColor = false;
+            this.bKartNakit.Click += new System.EventHandler(this.bKartNakit_Click);
+            // 
+            // bKart
+            // 
+            this.bKart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.bKart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bKart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.bKart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bKart.ForeColor = System.Drawing.Color.White;
+            this.bKart.Image = global::BarkodluSatis.Properties.Resources.debit_card;
+            this.bKart.Location = new System.Drawing.Point(109, 1);
+            this.bKart.Margin = new System.Windows.Forms.Padding(1);
+            this.bKart.Name = "bKart";
+            this.bKart.Size = new System.Drawing.Size(106, 104);
+            this.bKart.TabIndex = 1;
+            this.bKart.Text = "Kredi Kartı\r\n(F2)";
+            this.bKart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bKart.UseVisualStyleBackColor = false;
+            this.bKart.Click += new System.EventHandler(this.bKart_Click);
+            // 
+            // bNakit
+            // 
+            this.bNakit.BackColor = System.Drawing.Color.Tomato;
+            this.bNakit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bNakit.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
+            this.bNakit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bNakit.ForeColor = System.Drawing.Color.White;
+            this.bNakit.Image = global::BarkodluSatis.Properties.Resources.turkish_lira;
+            this.bNakit.Location = new System.Drawing.Point(1, 1);
+            this.bNakit.Margin = new System.Windows.Forms.Padding(1);
+            this.bNakit.Name = "bNakit";
+            this.bNakit.Size = new System.Drawing.Size(106, 104);
+            this.bNakit.TabIndex = 0;
+            this.bNakit.Text = "Nakit\r\n(F1)";
+            this.bNakit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bNakit.UseVisualStyleBackColor = false;
+            this.bNakit.Click += new System.EventHandler(this.bNakit_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Tomato;
@@ -400,7 +477,7 @@ namespace BarkodluSatis
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Ödenen (F12)";
+            this.label1.Text = "Ödenen";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel12
@@ -454,15 +531,15 @@ namespace BarkodluSatis
             this.gridSatisListesi.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.gridSatisListesi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridSatisListesi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSatisListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSatisListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridSatisListesi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridSatisListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Barkod,
@@ -479,17 +556,17 @@ namespace BarkodluSatis
             this.gridSatisListesi.EnableHeadersVisualStyles = false;
             this.gridSatisListesi.Location = new System.Drawing.Point(3, 103);
             this.gridSatisListesi.Name = "gridSatisListesi";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridSatisListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridSatisListesi.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.gridSatisListesi.RowHeadersVisible = false;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.gridSatisListesi.RowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridSatisListesi.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.gridSatisListesi.RowTemplate.Height = 35;
             this.gridSatisListesi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridSatisListesi.Size = new System.Drawing.Size(542, 441);
@@ -514,31 +591,31 @@ namespace BarkodluSatis
             // 
             // Birim
             // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Birim.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Birim.DefaultCellStyle = dataGridViewCellStyle9;
             this.Birim.HeaderText = "Birim";
             this.Birim.Name = "Birim";
             // 
             // Fiyat
             // 
-            dataGridViewCellStyle31.Format = "C2";
-            dataGridViewCellStyle31.NullValue = null;
-            this.Fiyat.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Fiyat.DefaultCellStyle = dataGridViewCellStyle10;
             this.Fiyat.HeaderText = "Fiyat";
             this.Fiyat.Name = "Fiyat";
             // 
             // Miktar
             // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Miktar.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Miktar.DefaultCellStyle = dataGridViewCellStyle11;
             this.Miktar.HeaderText = "Miktar";
             this.Miktar.Name = "Miktar";
             // 
             // Toplam
             // 
-            dataGridViewCellStyle33.Format = "C2";
-            dataGridViewCellStyle33.NullValue = null;
-            this.Toplam.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Toplam.DefaultCellStyle = dataGridViewCellStyle12;
             this.Toplam.HeaderText = "Toplam";
             this.Toplam.Name = "Toplam";
             // 
@@ -553,6 +630,12 @@ namespace BarkodluSatis
             this.AlisFiyat.HeaderText = "Alış Fiyat";
             this.AlisFiyat.Name = "AlisFiyat";
             this.AlisFiyat.Visible = false;
+            // 
+            // Sil
+            // 
+            this.Sil.HeaderText = "Sil";
+            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
+            this.Sil.Name = "Sil";
             // 
             // splitContainer2
             // 
@@ -1483,7 +1566,7 @@ namespace BarkodluSatis
             this.tableLayoutPanel9.Controls.Add(this.bOdenen, 0, 2);
             this.tableLayoutPanel9.Controls.Add(this.bIade, 1, 1);
             this.tableLayoutPanel9.Controls.Add(this.bBarkod, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.button47, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.bIslemBeklet, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.bDigerUrun, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(385, 0);
@@ -1598,21 +1681,22 @@ namespace BarkodluSatis
             this.bBarkod.UseVisualStyleBackColor = false;
             this.bBarkod.Click += new System.EventHandler(this.bBarkod_Click);
             // 
-            // button47
+            // bIslemBeklet
             // 
-            this.button47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(178)))), ((int)(((byte)(171)))));
-            this.button47.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button47.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(178)))), ((int)(((byte)(171)))));
-            this.button47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button47.ForeColor = System.Drawing.Color.White;
-            this.button47.Location = new System.Drawing.Point(98, 1);
-            this.button47.Margin = new System.Windows.Forms.Padding(1);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(96, 60);
-            this.button47.TabIndex = 1;
-            this.button47.Text = "Tuş Düzenle";
-            this.button47.UseVisualStyleBackColor = false;
+            this.bIslemBeklet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(178)))), ((int)(((byte)(171)))));
+            this.bIslemBeklet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bIslemBeklet.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(178)))), ((int)(((byte)(171)))));
+            this.bIslemBeklet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIslemBeklet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bIslemBeklet.ForeColor = System.Drawing.Color.White;
+            this.bIslemBeklet.Location = new System.Drawing.Point(98, 1);
+            this.bIslemBeklet.Margin = new System.Windows.Forms.Padding(1);
+            this.bIslemBeklet.Name = "bIslemBeklet";
+            this.bIslemBeklet.Size = new System.Drawing.Size(96, 60);
+            this.bIslemBeklet.TabIndex = 1;
+            this.bIslemBeklet.Text = "İşlem Beklet";
+            this.bIslemBeklet.UseVisualStyleBackColor = false;
+            this.bIslemBeklet.Click += new System.EventHandler(this.bIslemBeklet_Click);
             // 
             // bDigerUrun
             // 
@@ -1638,68 +1722,117 @@ namespace BarkodluSatis
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 77;
             // 
-            // bKartNakit
+            // gridBekle
             // 
-            this.bKartNakit.BackColor = System.Drawing.Color.Olive;
-            this.bKartNakit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bKartNakit.FlatAppearance.BorderColor = System.Drawing.Color.Olive;
-            this.bKartNakit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bKartNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bKartNakit.ForeColor = System.Drawing.Color.White;
-            this.bKartNakit.Image = global::BarkodluSatis.Properties.Resources.credit_card;
-            this.bKartNakit.Location = new System.Drawing.Point(217, 1);
-            this.bKartNakit.Margin = new System.Windows.Forms.Padding(1);
-            this.bKartNakit.Name = "bKartNakit";
-            this.bKartNakit.Size = new System.Drawing.Size(106, 104);
-            this.bKartNakit.TabIndex = 2;
-            this.bKartNakit.Text = "Kart - Nakit\r\n(F3)";
-            this.bKartNakit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bKartNakit.UseVisualStyleBackColor = false;
-            this.bKartNakit.Click += new System.EventHandler(this.bKartNakit_Click);
+            this.gridBekle.AllowUserToAddRows = false;
+            this.gridBekle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridBekle.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gridBekle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridBekle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBekle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridBekle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBekle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewImageColumn2});
+            this.gridBekle.EnableHeadersVisualStyles = false;
+            this.gridBekle.Location = new System.Drawing.Point(304, 10);
+            this.gridBekle.Name = "gridBekle";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridBekle.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridBekle.RowHeadersVisible = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridBekle.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridBekle.RowTemplate.Height = 35;
+            this.gridBekle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridBekle.Size = new System.Drawing.Size(40, 31);
+            this.gridBekle.TabIndex = 8;
+            this.gridBekle.Visible = false;
             // 
-            // bKart
+            // dataGridViewTextBoxColumn1
             // 
-            this.bKart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.bKart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bKart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.bKart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bKart.ForeColor = System.Drawing.Color.White;
-            this.bKart.Image = global::BarkodluSatis.Properties.Resources.debit_card;
-            this.bKart.Location = new System.Drawing.Point(109, 1);
-            this.bKart.Margin = new System.Windows.Forms.Padding(1);
-            this.bKart.Name = "bKart";
-            this.bKart.Size = new System.Drawing.Size(106, 104);
-            this.bKart.TabIndex = 1;
-            this.bKart.Text = "Kredi Kartı\r\n(F2)";
-            this.bKart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bKart.UseVisualStyleBackColor = false;
-            this.bKart.Click += new System.EventHandler(this.bKart_Click);
+            this.dataGridViewTextBoxColumn1.HeaderText = "Barkod";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // bNakit
+            // dataGridViewTextBoxColumn2
             // 
-            this.bNakit.BackColor = System.Drawing.Color.Tomato;
-            this.bNakit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bNakit.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.bNakit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bNakit.ForeColor = System.Drawing.Color.White;
-            this.bNakit.Image = global::BarkodluSatis.Properties.Resources.turkish_lira;
-            this.bNakit.Location = new System.Drawing.Point(1, 1);
-            this.bNakit.Margin = new System.Windows.Forms.Padding(1);
-            this.bNakit.Name = "bNakit";
-            this.bNakit.Size = new System.Drawing.Size(106, 104);
-            this.bNakit.TabIndex = 0;
-            this.bNakit.Text = "Nakit\r\n(F1)";
-            this.bNakit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bNakit.UseVisualStyleBackColor = false;
-            this.bNakit.Click += new System.EventHandler(this.bNakit_Click);
+            this.dataGridViewTextBoxColumn2.HeaderText = "Ürün Adı";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // Sil
+            // dataGridViewTextBoxColumn3
             // 
-            this.Sil.HeaderText = "Sil";
-            this.Sil.Image = global::BarkodluSatis.Properties.Resources.remove;
-            this.Sil.Name = "Sil";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ürün Grup";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Birim";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Fiyat";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Miktar";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Toplam";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Kdv Tutarı";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Alış Fiyat";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Sil";
+            this.dataGridViewImageColumn2.Image = global::BarkodluSatis.Properties.Resources.remove;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
             // fSatis
             // 
@@ -1708,10 +1841,12 @@ namespace BarkodluSatis
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1132, 659);
             this.Controls.Add(this.splitContainer1);
+            this.KeyPreview = true;
             this.Name = "fSatis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Barkodlu Satış";
             this.Load += new System.EventHandler(this.fSatis_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fSatis_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -1739,6 +1874,7 @@ namespace BarkodluSatis
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridBekle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1815,7 +1951,7 @@ namespace BarkodluSatis
         private System.Windows.Forms.Button bOdenen;
         private System.Windows.Forms.Button bIade;
         private System.Windows.Forms.Button bBarkod;
-        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Button bIslemBeklet;
         private System.Windows.Forms.Button bDigerUrun;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
@@ -1840,6 +1976,17 @@ namespace BarkodluSatis
         public System.Windows.Forms.Label lNakit;
         public System.Windows.Forms.Label lKart;
         public System.Windows.Forms.TextBox tGenelToplam;
+        private System.Windows.Forms.DataGridView gridBekle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
 

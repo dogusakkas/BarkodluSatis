@@ -258,6 +258,7 @@ namespace BarkodluSatis
             {
                 double sonuc = Islemler.Double.DoubleYap(tNumarator.Text) - Islemler.Double.DoubleYap(tGenelToplam.Text);
                 tParaUstu.Text = sonuc.ToString("C2");
+                tOdenen.Text = Islemler.Double.DoubleYap(tNumarator.Text).ToString("C2");
                 tNumarator.Clear();
                 tBarkod.Focus();
             }
@@ -286,6 +287,7 @@ namespace BarkodluSatis
         {
             Button b = (Button)sender;
             double sonuc = Islemler.Double.DoubleYap(b.Text) - Islemler.Double.DoubleYap(tGenelToplam.Text);
+            tOdenen.Text = Islemler.Double.DoubleYap(b.Text).ToString("C2");
             tParaUstu.Text = sonuc.ToString("C2");
         }
 
@@ -300,6 +302,7 @@ namespace BarkodluSatis
                 gridSatisListesi.Rows[satirsayisi].Cells["UrunGrup"].Value = "Barkodsuz Ürün";
                 gridSatisListesi.Rows[satirsayisi].Cells["Birim"].Value = "Adet";
                 gridSatisListesi.Rows[satirsayisi].Cells["Miktar"].Value = 1;
+                gridSatisListesi.Rows[satirsayisi].Cells["AlisFiyat"].Value = 0;
                 gridSatisListesi.Rows[satirsayisi].Cells["Fiyat"].Value = Convert.ToDouble(tNumarator.Text);
                 gridSatisListesi.Rows[satirsayisi].Cells["KdvTutar"].Value = 0;
                 gridSatisListesi.Rows[satirsayisi].Cells["Toplam"].Value = Convert.ToDouble(tNumarator.Text);
@@ -430,6 +433,8 @@ namespace BarkodluSatis
                 db.SaveChanges();
 
                 MessageBox.Show("Fiş yazdırma ekranı");
+
+                Temizle();
             }
         }
 
@@ -452,7 +457,7 @@ namespace BarkodluSatis
                 fNakitKart fnk = new fNakitKart();
                 fnk.Show();
             }
-            
+
         }
 
         // Miktar ve Numaratör Textboxları için GEÇERLİDİR.
@@ -461,6 +466,77 @@ namespace BarkodluSatis
             if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void fSatis_KeyDown(object sender, KeyEventArgs e)
+        {
+            int satirsayisi = gridSatisListesi.Rows.Count;
+
+            if (e.KeyCode == Keys.F1)
+                SatisYap("Nakit");
+
+            if (e.KeyCode == Keys.F2)
+                SatisYap("Kart");
+
+            if (e.KeyCode == Keys.F3 && satirsayisi > 0)
+            {
+                fNakitKart fnk = new fNakitKart();
+                fnk.Show();
+            }
+        }
+
+        private void bIslemBeklet_Click(object sender, EventArgs e)
+        {
+            if (bIslemBeklet.Text =="İşlem Beklet")
+            {
+                Bekle();
+                bIslemBeklet.BackColor = System.Drawing.Color.DarkOrange;
+                bIslemBeklet.Text = "İşlem Bekliyor";
+                gridSatisListesi.Rows.Clear();
+            }
+            else
+            {
+                BeklemedenCik();
+                bIslemBeklet.BackColor = System.Drawing.Color.MediumAquamarine;
+                bIslemBeklet.Text = "İşlem Beklet";
+                gridBekle.Rows.Clear();
+            }
+            
+        }
+
+        private void Bekle()
+        {
+            int satir = gridSatisListesi.Rows.Count;
+            int sutun = gridSatisListesi.Columns.Count;
+            if (satir > 0)
+            {
+                for (int i = 0; i < satir; i++)
+                {
+                    gridBekle.Rows.Add();
+                    for (int j = 0; j < sutun - 1; j++)
+                    {
+                        gridBekle.Rows[i].Cells[j].Value = gridSatisListesi.Rows[i].Cells[j].Value;
+
+                    }
+                }
+            }
+        }
+        private void BeklemedenCik()
+        {
+            int satir = gridBekle.Rows.Count;
+            int sutun = gridBekle.Columns.Count;
+            if (satir > 0)
+            {
+                for (int i = 0; i < satir; i++)
+                {
+                    gridSatisListesi.Rows.Add();
+                    for (int j = 0; j < sutun - 1; j++)
+                    {
+                        gridSatisListesi.Rows[i].Cells[j].Value = gridBekle.Rows[i].Cells[j].Value;
+
+                    }
+                }
             }
         }
     }
