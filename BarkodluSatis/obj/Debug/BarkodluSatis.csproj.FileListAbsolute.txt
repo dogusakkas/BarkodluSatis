@@ -1,7 +1,6 @@
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\BarkodluSatis.exe.config
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\BarkodluSatis.exe
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\BarkodluSatis.pdb
-C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.AssemblyReference.cache
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.fSatis.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Properties.Resources.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.GenerateResource.cache
@@ -17,3 +16,5 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\EntityFramewor
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.CopyComplete
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.fHizliButonUrunEkle.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.fNakitKart.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Ürün.fUrunGiris.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.AssemblyReference.cache

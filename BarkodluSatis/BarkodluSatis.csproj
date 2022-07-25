@@ -70,10 +70,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fSatis.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\Satış\fSatis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSatis.Designer.cs">
+    <Compile Include="Sayfalar\Satış\fSatis.Designer.cs">
       <DependentUpon>fSatis.cs</DependentUpon>
     </Compile>
     <Compile Include="HizliUrun.cs">
@@ -122,48 +127,46 @@
     <Compile Include="Satis.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\fHizliButonUrunEkle.cs">
+    <Compile Include="Sayfalar\Satış\fHizliButonUrunEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sayfalar\fHizliButonUrunEkle.Designer.cs">
+    <Compile Include="Sayfalar\Satış\fHizliButonUrunEkle.Designer.cs">
       <DependentUpon>fHizliButonUrunEkle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\fNakitKart.cs">
+    <Compile Include="Sayfalar\Satış\fNakitKart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sayfalar\fNakitKart.Designer.cs">
+    <Compile Include="Sayfalar\Satış\fNakitKart.Designer.cs">
       <DependentUpon>fNakitKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\Ürün\fUrunGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayfalar\Ürün\fUrunGiris.Designer.cs">
+      <DependentUpon>fUrunGiris.cs</DependentUpon>
     </Compile>
     <Compile Include="Terazi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Urun.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fSatis.resx">
+    <EmbeddedResource Include="Sayfalar\Satış\fSatis.resx">
       <DependentUpon>fSatis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Sayfalar\fHizliButonUrunEkle.resx">
+    <EmbeddedResource Include="Sayfalar\Satış\fHizliButonUrunEkle.resx">
       <DependentUpon>fHizliButonUrunEkle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sayfalar\fNakitKart.resx">
+    <EmbeddedResource Include="Sayfalar\Satış\fNakitKart.resx">
       <DependentUpon>fNakitKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayfalar\Ürün\fUrunGiris.resx">
+      <DependentUpon>fUrunGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -216,6 +219,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\bookmark.png" />
+    <None Include="Resources\add.png" />
     <None Include="Resources\enter.png" />
   </ItemGroup>
   <ItemGroup>
