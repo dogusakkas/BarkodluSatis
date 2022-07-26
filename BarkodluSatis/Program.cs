@@ -1,4 +1,5 @@
-﻿using BarkodluSatis.Sayfalar.Ürün;
+﻿using BarkodluSatis.Sayfalar.Satış;
+using BarkodluSatis.Sayfalar.Ürün;
 using System;
 using System.Collections.Generic;
 using System.Linq;

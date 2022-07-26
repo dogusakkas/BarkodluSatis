@@ -17,4 +17,17 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.fHizliButonUrunEkle.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.fNakitKart.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Ürün.fUrunGiris.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.Context.tt
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.tt
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\HizliUrun.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Islem.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\IslemOzet.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.Context.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.Designer.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Satis.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Terazi.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Urun.cs
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.edmx.diagram
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Satış.fUrunGrubuEkle.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.AssemblyReference.cache

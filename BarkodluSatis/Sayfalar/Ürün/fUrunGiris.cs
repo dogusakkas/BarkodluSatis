@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarkodluSatis.Sayfalar.Satış;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,6 +76,14 @@ namespace BarkodluSatis.Sayfalar.Ürün
                     guncelle.Kullanici = lKullanici.Text;
 
                     db.SaveChanges();
+
+                    if (tBarkod.Text.Length==8)
+                    {
+                        var ozelbarkod = db.Barkod.First();
+                        ozelbarkod.BarkodNo += 1;
+                        db.SaveChanges();
+                    }
+
                     gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
                 }
                 else
@@ -111,11 +120,20 @@ namespace BarkodluSatis.Sayfalar.Ürün
             }
         }
 
+        public void GrupDoldur()
+        {
+            cmbUrunGrubu.DisplayMember = "UrunGrupAdi";
+            cmbUrunGrubu.ValueMember = "Id";
+            cmbUrunGrubu.DataSource = db.UrunGrup.OrderBy(x => x.UrunGrupAdi).ToList();
+        }
+
         private void fUrunGiris_Load(object sender, EventArgs e)
         {
             gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
 
-            tUrunSayisi.Text = db.Urun.Count().ToString();
+            tUrunSayisi.Text = db.Urun.Count().ToString(); // dataGridViewdeki ürünlerin sayısı
+
+            GrupDoldur();
         }
 
         private void tUrunAra_TextChanged(object sender, EventArgs e)
@@ -130,7 +148,7 @@ namespace BarkodluSatis.Sayfalar.Ürün
         private void tUrunAra_Leave(object sender, EventArgs e)
         {
             tUrunAra.Clear();
-            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
+            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList(); // Ürün ara textboxından farklı bir yere tıklanırsa dataGridView tablosunu eski haline getirir
         }
 
         
@@ -141,5 +159,36 @@ namespace BarkodluSatis.Sayfalar.Ürün
         }
 
         
+
+        private void bUrunGrubuEkle_Click(object sender, EventArgs e)
+        {
+            fUrunGrubuEkle uge = new fUrunGrubuEkle();
+            uge.ShowDialog();
+        }
+
+        private void bBarkodOlustur_Click(object sender, EventArgs e)
+        {
+            var barkodno = db.Barkod.First();
+            int karakter = barkodno.BarkodNo.ToString().Length;
+            string sifirlar = string.Empty;
+
+            for (int i = 0; i < 8-karakter; i++)
+            {
+                sifirlar = sifirlar + "0";
+            }
+            string olusanbarkod = sifirlar + barkodno.BarkodNo.ToString();
+            tBarkod.Text = olusanbarkod;
+
+            tUrunAdi.Focus();
+        }
+
+        // Alış fiyatı ve Satış fiyatı her ikisi içinde geçerli
+        private void tAlisFiyati_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != (char)08 && e.KeyChar != (char)44 && e.KeyChar != (char)45)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
