@@ -54,5 +54,30 @@ namespace BarkodluSatis.Sayfalar.Satış
                 MessageBox.Show("Grup bilgisi ekleyiniz", "Uyarı", MessageBoxButtons.OK);
             }
         }
+
+        private void bSil_Click(object sender, EventArgs e)
+        {
+            int grupId = Convert.ToInt16(listUrunGrup.SelectedValue.ToString());
+            string grupAd = listUrunGrup.Text;
+
+            DialogResult dialogResult = MessageBox.Show(grupAd + " grubu silmek istediğinize emin misiniz?","Uyarı",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var grup = db.UrunGrup.FirstOrDefault(x=>x.Id ==grupId);
+                db.UrunGrup.Remove(grup);
+                db.SaveChanges();
+                GrupDoldur();
+                tUrunGrupAd.Focus();
+                MessageBox.Show(grupAd +" ürün grubu silindi");
+
+                fUrunGiris f = (fUrunGiris)Application.OpenForms["fUrunGiris"];
+                f.GrupDoldur();
+            }
+            else
+            {
+
+            }
+        }
     }
 }

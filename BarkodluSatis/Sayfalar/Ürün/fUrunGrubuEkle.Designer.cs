@@ -29,11 +29,11 @@ namespace BarkodluSatis.Sayfalar.Satış
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fUrunGrubuEkle));
             this.listUrunGrup = new System.Windows.Forms.ListBox();
-            this.bEkle = new BarkodluSatis.OzelNesneler.buttonResimli();
             this.tUrunGrupAd = new BarkodluSatis.OzelNesneler.textboxStandart();
             this.labelStandart1 = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.bSil = new System.Windows.Forms.Button();
+            this.bEkle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listUrunGrup
@@ -41,28 +41,10 @@ namespace BarkodluSatis.Sayfalar.Satış
             this.listUrunGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listUrunGrup.FormattingEnabled = true;
             this.listUrunGrup.ItemHeight = 20;
-            this.listUrunGrup.Location = new System.Drawing.Point(20, 103);
+            this.listUrunGrup.Location = new System.Drawing.Point(20, 83);
             this.listUrunGrup.Name = "listUrunGrup";
-            this.listUrunGrup.Size = new System.Drawing.Size(318, 144);
+            this.listUrunGrup.Size = new System.Drawing.Size(318, 164);
             this.listUrunGrup.TabIndex = 2;
-            // 
-            // bEkle
-            // 
-            this.bEkle.BackColor = System.Drawing.Color.Tomato;
-            this.bEkle.FlatAppearance.BorderColor = System.Drawing.Color.Tomato;
-            this.bEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bEkle.ForeColor = System.Drawing.Color.White;
-            this.bEkle.Image = ((System.Drawing.Image)(resources.GetObject("bEkle.Image")));
-            this.bEkle.Location = new System.Drawing.Point(84, 267);
-            this.bEkle.Margin = new System.Windows.Forms.Padding(1);
-            this.bEkle.Name = "bEkle";
-            this.bEkle.Size = new System.Drawing.Size(175, 104);
-            this.bEkle.TabIndex = 0;
-            this.bEkle.Text = "Ekle";
-            this.bEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.bEkle.UseVisualStyleBackColor = false;
-            this.bEkle.Click += new System.EventHandler(this.bEkle_Click);
             // 
             // tUrunGrupAd
             // 
@@ -83,6 +65,36 @@ namespace BarkodluSatis.Sayfalar.Satış
             this.labelStandart1.TabIndex = 0;
             this.labelStandart1.Text = "Ürün Grubu Adı";
             // 
+            // bSil
+            // 
+            this.bSil.BackColor = System.Drawing.Color.DarkRed;
+            this.bSil.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.bSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bSil.ForeColor = System.Drawing.Color.White;
+            this.bSil.Location = new System.Drawing.Point(20, 264);
+            this.bSil.Name = "bSil";
+            this.bSil.Size = new System.Drawing.Size(149, 104);
+            this.bSil.TabIndex = 3;
+            this.bSil.Text = "Sil";
+            this.bSil.UseVisualStyleBackColor = false;
+            this.bSil.Click += new System.EventHandler(this.bSil_Click);
+            // 
+            // bEkle
+            // 
+            this.bEkle.BackColor = System.Drawing.Color.YellowGreen;
+            this.bEkle.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
+            this.bEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bEkle.ForeColor = System.Drawing.Color.White;
+            this.bEkle.Location = new System.Drawing.Point(189, 264);
+            this.bEkle.Name = "bEkle";
+            this.bEkle.Size = new System.Drawing.Size(149, 104);
+            this.bEkle.TabIndex = 4;
+            this.bEkle.Text = "Ekle";
+            this.bEkle.UseVisualStyleBackColor = false;
+            this.bEkle.Click += new System.EventHandler(this.bEkle_Click);
+            // 
             // fUrunGrubuEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +102,7 @@ namespace BarkodluSatis.Sayfalar.Satış
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(364, 403);
             this.Controls.Add(this.bEkle);
+            this.Controls.Add(this.bSil);
             this.Controls.Add(this.listUrunGrup);
             this.Controls.Add(this.tUrunGrupAd);
             this.Controls.Add(this.labelStandart1);
@@ -107,6 +120,7 @@ namespace BarkodluSatis.Sayfalar.Satış
         private OzelNesneler.labelStandart labelStandart1;
         private OzelNesneler.textboxStandart tUrunGrupAd;
         private System.Windows.Forms.ListBox listUrunGrup;
-        private OzelNesneler.buttonResimli bEkle;
+        private System.Windows.Forms.Button bSil;
+        private System.Windows.Forms.Button bEkle;
     }
 }

@@ -84,7 +84,8 @@ namespace BarkodluSatis.Sayfalar.Ürün
                         db.SaveChanges();
                     }
 
-                    gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
+                    gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList();
+                    Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
                 }
                 else
                 {
@@ -107,7 +108,8 @@ namespace BarkodluSatis.Sayfalar.Ürün
 
                     Temizle();
 
-                    gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
+                    gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList();
+                    Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
                 }
                
 
@@ -129,7 +131,8 @@ namespace BarkodluSatis.Sayfalar.Ürün
 
         private void fUrunGiris_Load(object sender, EventArgs e)
         {
-            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList();
+            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList();
+            Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
 
             tUrunSayisi.Text = db.Urun.Count().ToString(); // dataGridViewdeki ürünlerin sayısı
 
@@ -142,13 +145,15 @@ namespace BarkodluSatis.Sayfalar.Ürün
             {
                 string urunAd = tUrunAra.Text;
                 gridUrunler.DataSource = db.Urun.Where(x => x.UrunAd.Contains(urunAd)).ToList();
+
+                Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
             }
         }
 
         private void tUrunAra_Leave(object sender, EventArgs e)
         {
             tUrunAra.Clear();
-            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(10).ToList(); // Ürün ara textboxından farklı bir yere tıklanırsa dataGridView tablosunu eski haline getirir
+            gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList(); // Ürün ara textboxından farklı bir yere tıklanırsa dataGridView tablosunu eski haline getirir
         }
 
         
@@ -189,6 +194,38 @@ namespace BarkodluSatis.Sayfalar.Ürün
             {
                 e.Handled = true;
             }
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gridUrunler.Rows.Count>0)
+            {
+                int urunId = Convert.ToInt32(gridUrunler.CurrentRow.Cells["Id"].Value.ToString());
+                string urunAd = gridUrunler.CurrentRow.Cells["UrunAd"].Value.ToString();
+                string barkod = gridUrunler.CurrentRow.Cells["Barkod"].Value.ToString();
+
+                DialogResult dialogResult = MessageBox.Show(urunAd + " ürünü silmek istediğinize emin misiniz", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    var urun = db.Urun.Find(urunId);
+                    db.Urun.Remove(urun);
+                    
+                    var hizliurun = db.HizliUrun.Where(x => x.Barkod == barkod).SingleOrDefault();
+                    hizliurun.Barkod = "-";
+                    hizliurun.UrunAd = "-";
+                    hizliurun.Fiyat = 0;
+                    db.SaveChanges();
+
+                    MessageBox.Show("Ürün başarıyla silindi");
+
+                    gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList();
+                    Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
+
+                    tBarkod.Focus();
+                }
+            }
+           
         }
     }
 }

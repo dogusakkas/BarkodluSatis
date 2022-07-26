@@ -24,7 +24,9 @@ namespace BarkodluSatis.Sayfalar
             {
                 string urunad = tUrunAra.Text;
                 var urunler = db.Urun.Where(x => x.UrunAd.Contains(urunad)).ToList();
+                GridViewHeaderGizle();
                 gridUrunler.DataSource = urunler;
+                Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
             }
         }
 
@@ -58,11 +60,22 @@ namespace BarkodluSatis.Sayfalar
             if (chTumu.Checked)
             {
                 gridUrunler.DataSource = db.Urun.ToList();
+                GridViewHeaderGizle();
+                Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
             }
             else
             {
                 gridUrunler.DataSource = null;
             }
+        }
+
+        private void GridViewHeaderGizle()
+        {
+            gridUrunler.Columns["AlisFiyati"].Visible = false;
+            gridUrunler.Columns["SatisFiyat"].Visible = false;
+            gridUrunler.Columns["KdvOrani"].Visible = false;
+            gridUrunler.Columns["KdvTutari"].Visible = false;
+            gridUrunler.Columns["Miktar"].Visible = false;
         }
     }
 }

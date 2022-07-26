@@ -29,13 +29,18 @@ namespace BarkodluSatis.Sayfalar.Ürün
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fUrunGiris));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tAlisFiyati = new System.Windows.Forms.TextBox();
             this.tSatisFiyati = new System.Windows.Forms.TextBox();
             this.cmbUrunGrubu = new System.Windows.Forms.ComboBox();
+            this.labelStandart10 = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.tUrunSayisi = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.labelStandart9 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.lKullanici = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.tUrunAra = new BarkodluSatis.OzelNesneler.textboxStandart();
             this.label12 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.bRaporAl = new BarkodluSatis.OzelNesneler.buttonResimli();
             this.bKaydet = new BarkodluSatis.OzelNesneler.buttonResimli();
@@ -55,18 +60,15 @@ namespace BarkodluSatis.Sayfalar.Ürün
             this.labelStandart3 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart2 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart1 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.labelStandart10 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.gridUrunler = new BarkodluSatis.OzelNesneler.gridDataViewOzel();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Barkod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tUrunSayisi = new BarkodluSatis.OzelNesneler.tNumeric();
-            this.labelStandart9 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tUrunAra = new BarkodluSatis.OzelNesneler.textboxStandart();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -144,6 +146,38 @@ namespace BarkodluSatis.Sayfalar.Ürün
             this.cmbUrunGrubu.Size = new System.Drawing.Size(250, 28);
             this.cmbUrunGrubu.TabIndex = 4;
             // 
+            // labelStandart10
+            // 
+            this.labelStandart10.AutoSize = true;
+            this.labelStandart10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelStandart10.Location = new System.Drawing.Point(444, 283);
+            this.labelStandart10.Name = "labelStandart10";
+            this.labelStandart10.Size = new System.Drawing.Size(89, 20);
+            this.labelStandart10.TabIndex = 21;
+            this.labelStandart10.Text = "Ürün Sayısı";
+            // 
+            // tUrunSayisi
+            // 
+            this.tUrunSayisi.BackColor = System.Drawing.Color.White;
+            this.tUrunSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tUrunSayisi.Location = new System.Drawing.Point(550, 280);
+            this.tUrunSayisi.Name = "tUrunSayisi";
+            this.tUrunSayisi.ReadOnly = true;
+            this.tUrunSayisi.Size = new System.Drawing.Size(69, 26);
+            this.tUrunSayisi.TabIndex = 20;
+            this.tUrunSayisi.TabStop = false;
+            this.tUrunSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelStandart9
+            // 
+            this.labelStandart9.AutoSize = true;
+            this.labelStandart9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelStandart9.Location = new System.Drawing.Point(61, 280);
+            this.labelStandart9.Name = "labelStandart9";
+            this.labelStandart9.Size = new System.Drawing.Size(73, 20);
+            this.labelStandart9.TabIndex = 18;
+            this.labelStandart9.Text = "Ürün Ara";
+            // 
             // lKullanici
             // 
             this.lKullanici.AutoSize = true;
@@ -153,6 +187,17 @@ namespace BarkodluSatis.Sayfalar.Ürün
             this.lKullanici.Size = new System.Drawing.Size(56, 20);
             this.lKullanici.TabIndex = 19;
             this.lKullanici.Text = "Doğuş";
+            // 
+            // tUrunAra
+            // 
+            this.tUrunAra.BackColor = System.Drawing.Color.White;
+            this.tUrunAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tUrunAra.Location = new System.Drawing.Point(171, 280);
+            this.tUrunAra.Name = "tUrunAra";
+            this.tUrunAra.Size = new System.Drawing.Size(250, 26);
+            this.tUrunAra.TabIndex = 13;
+            this.tUrunAra.TextChanged += new System.EventHandler(this.tUrunAra_TextChanged);
+            this.tUrunAra.Leave += new System.EventHandler(this.tUrunAra_Leave);
             // 
             // label12
             // 
@@ -384,16 +429,6 @@ namespace BarkodluSatis.Sayfalar.Ürün
             this.labelStandart1.TabIndex = 0;
             this.labelStandart1.Text = "Barkod";
             // 
-            // labelStandart10
-            // 
-            this.labelStandart10.AutoSize = true;
-            this.labelStandart10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelStandart10.Location = new System.Drawing.Point(444, 283);
-            this.labelStandart10.Name = "labelStandart10";
-            this.labelStandart10.Size = new System.Drawing.Size(89, 20);
-            this.labelStandart10.TabIndex = 21;
-            this.labelStandart10.Text = "Ürün Sayısı";
-            // 
             // gridUrunler
             // 
             this.gridUrunler.AllowUserToAddRows = false;
@@ -411,9 +446,6 @@ namespace BarkodluSatis.Sayfalar.Ürün
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUrunler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Barkod});
             this.gridUrunler.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridUrunler.EnableHeadersVisualStyles = false;
@@ -422,54 +454,26 @@ namespace BarkodluSatis.Sayfalar.Ürün
             this.gridUrunler.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridUrunler.RowHeadersVisible = false;
             this.gridUrunler.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridUrunler.RowTemplate.ContextMenuStrip = this.contextMenuStrip1;
             this.gridUrunler.RowTemplate.Height = 35;
             this.gridUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridUrunler.Size = new System.Drawing.Size(1170, 221);
             this.gridUrunler.TabIndex = 22;
             this.gridUrunler.TabStop = false;
             // 
-            // Id
+            // contextMenuStrip1
             // 
-            this.Id.HeaderText = "Ürün Numarası";
-            this.Id.Name = "Id";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
-            // Barkod
+            // silToolStripMenuItem
             // 
-            this.Barkod.HeaderText = "Barkod";
-            this.Barkod.Name = "Barkod";
-            // 
-            // tUrunSayisi
-            // 
-            this.tUrunSayisi.BackColor = System.Drawing.Color.White;
-            this.tUrunSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tUrunSayisi.Location = new System.Drawing.Point(550, 280);
-            this.tUrunSayisi.Name = "tUrunSayisi";
-            this.tUrunSayisi.ReadOnly = true;
-            this.tUrunSayisi.Size = new System.Drawing.Size(69, 26);
-            this.tUrunSayisi.TabIndex = 20;
-            this.tUrunSayisi.TabStop = false;
-            this.tUrunSayisi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labelStandart9
-            // 
-            this.labelStandart9.AutoSize = true;
-            this.labelStandart9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelStandart9.Location = new System.Drawing.Point(61, 280);
-            this.labelStandart9.Name = "labelStandart9";
-            this.labelStandart9.Size = new System.Drawing.Size(73, 20);
-            this.labelStandart9.TabIndex = 18;
-            this.labelStandart9.Text = "Ürün Ara";
-            // 
-            // tUrunAra
-            // 
-            this.tUrunAra.BackColor = System.Drawing.Color.White;
-            this.tUrunAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tUrunAra.Location = new System.Drawing.Point(171, 280);
-            this.tUrunAra.Name = "tUrunAra";
-            this.tUrunAra.Size = new System.Drawing.Size(250, 26);
-            this.tUrunAra.TabIndex = 13;
-            this.tUrunAra.TextChanged += new System.EventHandler(this.tUrunAra_TextChanged);
-            this.tUrunAra.Leave += new System.EventHandler(this.tUrunAra_Leave);
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // fUrunGiris
             // 
@@ -488,6 +492,7 @@ namespace BarkodluSatis.Sayfalar.Ürün
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -520,10 +525,10 @@ namespace BarkodluSatis.Sayfalar.Ürün
         public OzelNesneler.textboxStandart tBarkod;
         private OzelNesneler.labelStandart label12;
         public OzelNesneler.labelStandart lKullanici;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Barkod;
         public System.Windows.Forms.ComboBox cmbUrunGrubu;
         private System.Windows.Forms.TextBox tAlisFiyati;
         private System.Windows.Forms.TextBox tSatisFiyati;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
     }
 }
