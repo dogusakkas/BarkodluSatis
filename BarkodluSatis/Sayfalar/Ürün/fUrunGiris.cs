@@ -1,4 +1,5 @@
-﻿using BarkodluSatis.Sayfalar.Satış;
+﻿using BarkodluSatis.Islemler;
+using BarkodluSatis.Sayfalar.Satış;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,14 +107,16 @@ namespace BarkodluSatis.Sayfalar.Ürün
                     db.Urun.Add(urun);
                     db.SaveChanges();
 
-                    Temizle();
+                    
 
                     gridUrunler.DataSource = db.Urun.OrderByDescending(x => x.Id).Take(20).ToList();
                     Islemler.gridDataViewDuzenle.GridDuzenle(gridUrunler);
                 }
-               
 
-                
+                Islemler.StokGirisleri.StokHareket(tBarkod.Text,tUrunAdi.Text,"Adet",Convert.ToDouble(tMiktar.Text),cmbUrunGrubu.Text,lKullanici.Text);
+
+                Temizle();
+
             }
             else
             {

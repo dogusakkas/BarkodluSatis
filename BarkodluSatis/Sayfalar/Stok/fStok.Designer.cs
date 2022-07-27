@@ -29,9 +29,10 @@ namespace BarkodluSatis.Sayfalar.Stok
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cmbIslemTuru = new System.Windows.Forms.ComboBox();
             this.bAra = new System.Windows.Forms.Button();
             this.panelTarihler = new System.Windows.Forms.Panel();
             this.dataBitisTarih = new System.Windows.Forms.DateTimePicker();
@@ -41,16 +42,15 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbUrunGrubunaGore = new System.Windows.Forms.RadioButton();
             this.rbTumu = new System.Windows.Forms.RadioButton();
-            this.cmbIslemTuru = new System.Windows.Forms.ComboBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.labelStandart1 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart5 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart4 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart3 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart2 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.labelStandart6 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.tUrunAra = new BarkodluSatis.OzelNesneler.textboxStandart();
-            this.gridUrunler = new BarkodluSatis.OzelNesneler.gridDataViewOzel();
+            this.labelStandart6 = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.gridListe = new BarkodluSatis.OzelNesneler.gridDataViewOzel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -63,7 +63,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListe)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -99,6 +99,19 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.panel4.Size = new System.Drawing.Size(237, 70);
             this.panel4.TabIndex = 8;
             // 
+            // cmbIslemTuru
+            // 
+            this.cmbIslemTuru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIslemTuru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbIslemTuru.FormattingEnabled = true;
+            this.cmbIslemTuru.Items.AddRange(new object[] {
+            "Stok Durumu",
+            "Stok Giriş İzleme"});
+            this.cmbIslemTuru.Location = new System.Drawing.Point(14, 35);
+            this.cmbIslemTuru.Name = "cmbIslemTuru";
+            this.cmbIslemTuru.Size = new System.Drawing.Size(152, 24);
+            this.cmbIslemTuru.TabIndex = 1;
+            // 
             // bAra
             // 
             this.bAra.BackColor = System.Drawing.Color.Teal;
@@ -112,6 +125,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.bAra.TabIndex = 7;
             this.bAra.Text = "Ara";
             this.bAra.UseVisualStyleBackColor = false;
+            this.bAra.Click += new System.EventHandler(this.bAra_Click);
             // 
             // panelTarihler
             // 
@@ -151,6 +165,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             // 
             // cmbUrunGrubu
             // 
+            this.cmbUrunGrubu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUrunGrubu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbUrunGrubu.FormattingEnabled = true;
             this.cmbUrunGrubu.Location = new System.Drawing.Point(14, 33);
@@ -192,16 +207,27 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.rbTumu.Text = "Tümü";
             this.rbTumu.UseVisualStyleBackColor = true;
             // 
-            // cmbIslemTuru
+            // splitContainer2
             // 
-            this.cmbIslemTuru.FormattingEnabled = true;
-            this.cmbIslemTuru.Items.AddRange(new object[] {
-            "Stok Durumu",
-            "Stok Giriş İzleme"});
-            this.cmbIslemTuru.Location = new System.Drawing.Point(14, 35);
-            this.cmbIslemTuru.Name = "cmbIslemTuru";
-            this.cmbIslemTuru.Size = new System.Drawing.Size(152, 21);
-            this.cmbIslemTuru.TabIndex = 1;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.splitContainer2.Panel1.Controls.Add(this.tUrunAra);
+            this.splitContainer2.Panel1.Controls.Add(this.labelStandart6);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.gridListe);
+            this.splitContainer2.Size = new System.Drawing.Size(541, 544);
+            this.splitContainer2.SplitterDistance = 46;
+            this.splitContainer2.TabIndex = 0;
             // 
             // labelStandart1
             // 
@@ -218,6 +244,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             // 
             this.labelStandart5.AutoSize = true;
             this.labelStandart5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelStandart5.ForeColor = System.Drawing.Color.Red;
             this.labelStandart5.Location = new System.Drawing.Point(10, 84);
             this.labelStandart5.Name = "labelStandart5";
             this.labelStandart5.Size = new System.Drawing.Size(81, 20);
@@ -227,7 +254,9 @@ namespace BarkodluSatis.Sayfalar.Stok
             // labelStandart4
             // 
             this.labelStandart4.AutoSize = true;
+            this.labelStandart4.BackColor = System.Drawing.Color.Transparent;
             this.labelStandart4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelStandart4.ForeColor = System.Drawing.Color.Red;
             this.labelStandart4.Location = new System.Drawing.Point(10, 13);
             this.labelStandart4.Name = "labelStandart4";
             this.labelStandart4.Size = new System.Drawing.Size(120, 20);
@@ -256,38 +285,6 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.labelStandart2.TabIndex = 2;
             this.labelStandart2.Text = "Filtreleme Türü";
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.splitContainer2.Panel1.Controls.Add(this.tUrunAra);
-            this.splitContainer2.Panel1.Controls.Add(this.labelStandart6);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.gridUrunler);
-            this.splitContainer2.Size = new System.Drawing.Size(541, 544);
-            this.splitContainer2.SplitterDistance = 46;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // labelStandart6
-            // 
-            this.labelStandart6.AutoSize = true;
-            this.labelStandart6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelStandart6.Location = new System.Drawing.Point(20, 13);
-            this.labelStandart6.Name = "labelStandart6";
-            this.labelStandart6.Size = new System.Drawing.Size(73, 20);
-            this.labelStandart6.TabIndex = 0;
-            this.labelStandart6.Text = "Ürün Ara";
-            // 
             // tUrunAra
             // 
             this.tUrunAra.BackColor = System.Drawing.Color.White;
@@ -296,37 +293,51 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.tUrunAra.Name = "tUrunAra";
             this.tUrunAra.Size = new System.Drawing.Size(250, 26);
             this.tUrunAra.TabIndex = 1;
+            this.tUrunAra.TextChanged += new System.EventHandler(this.tUrunAra_TextChanged);
             // 
-            // gridUrunler
+            // labelStandart6
             // 
-            this.gridUrunler.AllowUserToAddRows = false;
-            this.gridUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridUrunler.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.gridUrunler.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridUrunler.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUrunler.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gridUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridUrunler.EnableHeadersVisualStyles = false;
-            this.gridUrunler.Location = new System.Drawing.Point(0, 0);
-            this.gridUrunler.Name = "gridUrunler";
-            this.gridUrunler.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridUrunler.RowHeadersVisible = false;
-            this.gridUrunler.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridUrunler.RowTemplate.Height = 35;
-            this.gridUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridUrunler.Size = new System.Drawing.Size(541, 494);
-            this.gridUrunler.TabIndex = 23;
-            this.gridUrunler.TabStop = false;
+            this.labelStandart6.AutoSize = true;
+            this.labelStandart6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelStandart6.ForeColor = System.Drawing.Color.OrangeRed;
+            this.labelStandart6.Location = new System.Drawing.Point(20, 13);
+            this.labelStandart6.Name = "labelStandart6";
+            this.labelStandart6.Size = new System.Drawing.Size(73, 20);
+            this.labelStandart6.TabIndex = 0;
+            this.labelStandart6.Text = "Ürün Ara";
+            // 
+            // gridListe
+            // 
+            this.gridListe.AllowUserToAddRows = false;
+            this.gridListe.AllowUserToDeleteRows = false;
+            this.gridListe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridListe.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.gridListe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridListe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListe.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridListe.EnableHeadersVisualStyles = false;
+            this.gridListe.Location = new System.Drawing.Point(0, 0);
+            this.gridListe.Name = "gridListe";
+            this.gridListe.ReadOnly = true;
+            this.gridListe.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListe.RowHeadersVisible = false;
+            this.gridListe.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridListe.RowTemplate.Height = 35;
+            this.gridListe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridListe.Size = new System.Drawing.Size(541, 494);
+            this.gridListe.TabIndex = 23;
+            this.gridListe.TabStop = false;
             // 
             // fStok
             // 
@@ -337,6 +348,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.Controls.Add(this.splitContainer1);
             this.Name = "fStok";
             this.Text = "Stok İzleme";
+            this.Load += new System.EventHandler(this.fStok_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -354,7 +366,7 @@ namespace BarkodluSatis.Sayfalar.Stok
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,6 +393,6 @@ namespace BarkodluSatis.Sayfalar.Stok
         private System.Windows.Forms.SplitContainer splitContainer2;
         private OzelNesneler.textboxStandart tUrunAra;
         private OzelNesneler.labelStandart labelStandart6;
-        private OzelNesneler.gridDataViewOzel gridUrunler;
+        private OzelNesneler.gridDataViewOzel gridListe;
     }
 }

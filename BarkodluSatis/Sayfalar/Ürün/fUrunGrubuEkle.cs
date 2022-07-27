@@ -74,10 +74,6 @@ namespace BarkodluSatis.Sayfalar.Satış
                 fUrunGiris f = (fUrunGiris)Application.OpenForms["fUrunGiris"];
                 f.GrupDoldur();
             }
-            else
-            {
-
-            }
         }
     }
 }
