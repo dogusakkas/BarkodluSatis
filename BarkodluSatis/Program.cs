@@ -1,4 +1,5 @@
 ﻿using BarkodluSatis.Sayfalar.Satış;
+using BarkodluSatis.Sayfalar.Stok;
 using BarkodluSatis.Sayfalar.Ürün;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace BarkodluSatis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fSatis());
+            Application.Run(new fStok());
         }
     }
 }

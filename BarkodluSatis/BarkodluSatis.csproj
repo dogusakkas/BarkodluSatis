@@ -152,6 +152,12 @@
     <Compile Include="Sayfalar\Satış\fNakitKart.Designer.cs">
       <DependentUpon>fNakitKart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sayfalar\Stok\fStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayfalar\Stok\fStok.Designer.cs">
+      <DependentUpon>fStok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sayfalar\Ürün\fUrunGrubuEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sayfalar\Satış\fNakitKart.resx">
       <DependentUpon>fNakitKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayfalar\Stok\fStok.resx">
+      <DependentUpon>fStok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sayfalar\Ürün\fUrunGrubuEkle.resx">
       <DependentUpon>fUrunGrubuEkle.cs</DependentUpon>
