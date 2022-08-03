@@ -77,11 +77,27 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Islemler\gridDataViewDuzenle.cs" />
+    <Compile Include="Islemler\Komisyon.cs" />
     <Compile Include="Islemler\StokGirisleri.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sabit.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fDetayGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fDetayGoster.Designer.cs">
+      <DependentUpon>fDetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fGelirGider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fGelirGider.Designer.cs">
+      <DependentUpon>fGelirGider.cs</DependentUpon>
     </Compile>
     <Compile Include="Sayfalar\Rapor\fRapor.cs">
       <SubType>Form</SubType>
@@ -192,6 +208,12 @@
     <Compile Include="UrunGrup.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sayfalar\Rapor\fDetayGoster.resx">
+      <DependentUpon>fDetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sayfalar\Rapor\fGelirGider.resx">
+      <DependentUpon>fGelirGider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sayfalar\Rapor\fRapor.resx">
       <DependentUpon>fRapor.cs</DependentUpon>
     </EmbeddedResource>

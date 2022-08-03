@@ -29,35 +29,38 @@ namespace BarkodluSatis.Sayfalar.Rapor
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataBitisTarih = new System.Windows.Forms.DateTimePicker();
+            this.bGiderEkle = new System.Windows.Forms.Button();
+            this.bGelirEkle = new System.Windows.Forms.Button();
+            this.dateBitisTarih = new System.Windows.Forms.DateTimePicker();
             this.dateBaslangicTarih = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tNumeric10 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.listFiltrelemeTuru = new System.Windows.Forms.ListBox();
+            this.lTarih = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.lKullanici = new BarkodluSatis.OzelNesneler.labelStandart();
+            this.tKartKomisyon = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart17 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tNumeric9 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tKdvToplam = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart16 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart13 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tNumeric7 = new BarkodluSatis.OzelNesneler.tNumeric();
-            this.tNumeric8 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tGiderKart = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tGiderNakit = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart14 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart15 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart10 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tNumeric5 = new BarkodluSatis.OzelNesneler.tNumeric();
-            this.tNumeric6 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tGelirKart = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tGelirNakit = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart11 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart12 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart7 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tNumeric3 = new BarkodluSatis.OzelNesneler.tNumeric();
-            this.tNumeric4 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tIadeKart = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tIadeNakit = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart8 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart9 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart6 = new BarkodluSatis.OzelNesneler.labelStandart();
-            this.tNumeric2 = new BarkodluSatis.OzelNesneler.tNumeric();
-            this.tNumeric1 = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tSatisKart = new BarkodluSatis.OzelNesneler.tNumeric();
+            this.tSatisNakit = new BarkodluSatis.OzelNesneler.tNumeric();
             this.labelStandart3 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart2 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.bGoster = new BarkodluSatis.OzelNesneler.buttonResimli();
@@ -65,11 +68,14 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart4 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.labelStandart1 = new BarkodluSatis.OzelNesneler.labelStandart();
             this.gridListe = new BarkodluSatis.OzelNesneler.gridDataViewOzel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detayGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListe)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -81,38 +87,40 @@ namespace BarkodluSatis.Sayfalar.Rapor
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric10);
+            this.splitContainer1.Panel1.Controls.Add(this.lTarih);
+            this.splitContainer1.Panel1.Controls.Add(this.lKullanici);
+            this.splitContainer1.Panel1.Controls.Add(this.bGiderEkle);
+            this.splitContainer1.Panel1.Controls.Add(this.bGelirEkle);
+            this.splitContainer1.Panel1.Controls.Add(this.tKartKomisyon);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart17);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric9);
+            this.splitContainer1.Panel1.Controls.Add(this.tKdvToplam);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart16);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart13);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric7);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric8);
+            this.splitContainer1.Panel1.Controls.Add(this.tGiderKart);
+            this.splitContainer1.Panel1.Controls.Add(this.tGiderNakit);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart14);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart15);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart10);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric5);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric6);
+            this.splitContainer1.Panel1.Controls.Add(this.tGelirKart);
+            this.splitContainer1.Panel1.Controls.Add(this.tGelirNakit);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart11);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart12);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart7);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric3);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric4);
+            this.splitContainer1.Panel1.Controls.Add(this.tIadeKart);
+            this.splitContainer1.Panel1.Controls.Add(this.tIadeNakit);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart8);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart9);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart6);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric2);
-            this.splitContainer1.Panel1.Controls.Add(this.tNumeric1);
+            this.splitContainer1.Panel1.Controls.Add(this.tSatisKart);
+            this.splitContainer1.Panel1.Controls.Add(this.tSatisNakit);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart3);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart2);
             this.splitContainer1.Panel1.Controls.Add(this.bGoster);
-            this.splitContainer1.Panel1.Controls.Add(this.dataBitisTarih);
+            this.splitContainer1.Panel1.Controls.Add(this.dateBitisTarih);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart5);
             this.splitContainer1.Panel1.Controls.Add(this.dateBaslangicTarih);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart4);
-            this.splitContainer1.Panel1.Controls.Add(this.listBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.listFiltrelemeTuru);
             this.splitContainer1.Panel1.Controls.Add(this.labelStandart1);
             // 
             // splitContainer1.Panel2
@@ -122,31 +130,39 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.splitContainer1.SplitterDistance = 233;
             this.splitContainer1.TabIndex = 0;
             // 
-            // listBox1
+            // bGiderEkle
             // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "Tümü",
-            "Satışlar",
-            "İade",
-            "Gelir (Satış Hariç)",
-            "Gider (İade Hariç)",
-            ""});
-            this.listBox1.Location = new System.Drawing.Point(16, 49);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 96);
-            this.listBox1.TabIndex = 1;
+            this.bGiderEkle.BackColor = System.Drawing.Color.DarkCyan;
+            this.bGiderEkle.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.bGiderEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bGiderEkle.Image = global::BarkodluSatis.Properties.Resources.add__1_;
+            this.bGiderEkle.Location = new System.Drawing.Point(1128, 165);
+            this.bGiderEkle.Name = "bGiderEkle";
+            this.bGiderEkle.Size = new System.Drawing.Size(48, 48);
+            this.bGiderEkle.TabIndex = 33;
+            this.bGiderEkle.UseVisualStyleBackColor = false;
+            this.bGiderEkle.Click += new System.EventHandler(this.bGiderEkle_Click);
             // 
-            // dataBitisTarih
+            // bGelirEkle
             // 
-            this.dataBitisTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dataBitisTarih.Location = new System.Drawing.Point(167, 122);
-            this.dataBitisTarih.Name = "dataBitisTarih";
-            this.dataBitisTarih.Size = new System.Drawing.Size(200, 23);
-            this.dataBitisTarih.TabIndex = 7;
+            this.bGelirEkle.BackColor = System.Drawing.Color.YellowGreen;
+            this.bGelirEkle.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
+            this.bGelirEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bGelirEkle.Image = global::BarkodluSatis.Properties.Resources.add__1_;
+            this.bGelirEkle.Location = new System.Drawing.Point(1128, 63);
+            this.bGelirEkle.Name = "bGelirEkle";
+            this.bGelirEkle.Size = new System.Drawing.Size(48, 48);
+            this.bGelirEkle.TabIndex = 32;
+            this.bGelirEkle.UseVisualStyleBackColor = false;
+            this.bGelirEkle.Click += new System.EventHandler(this.bGelirEkle_Click);
+            // 
+            // dateBitisTarih
+            // 
+            this.dateBitisTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateBitisTarih.Location = new System.Drawing.Point(167, 122);
+            this.dateBitisTarih.Name = "dateBitisTarih";
+            this.dateBitisTarih.Size = new System.Drawing.Size(200, 23);
+            this.dateBitisTarih.TabIndex = 7;
             // 
             // dateBaslangicTarih
             // 
@@ -156,41 +172,58 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.dateBaslangicTarih.Size = new System.Drawing.Size(200, 23);
             this.dateBaslangicTarih.TabIndex = 5;
             // 
-            // button2
+            // listFiltrelemeTuru
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::BarkodluSatis.Properties.Resources.add__1_;
-            this.button2.Location = new System.Drawing.Point(1128, 165);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 48);
-            this.button2.TabIndex = 33;
-            this.button2.UseVisualStyleBackColor = false;
+            this.listFiltrelemeTuru.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listFiltrelemeTuru.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listFiltrelemeTuru.FormattingEnabled = true;
+            this.listFiltrelemeTuru.ItemHeight = 16;
+            this.listFiltrelemeTuru.Items.AddRange(new object[] {
+            "Tümü",
+            "Satışlar",
+            "İade",
+            "Gelir (Satış Hariç)",
+            "Gider (İade Hariç)",
+            ""});
+            this.listFiltrelemeTuru.Location = new System.Drawing.Point(16, 49);
+            this.listFiltrelemeTuru.Name = "listFiltrelemeTuru";
+            this.listFiltrelemeTuru.Size = new System.Drawing.Size(120, 96);
+            this.listFiltrelemeTuru.TabIndex = 1;
             // 
-            // button1
+            // lTarih
             // 
-            this.button1.BackColor = System.Drawing.Color.YellowGreen;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::BarkodluSatis.Properties.Resources.add__1_;
-            this.button1.Location = new System.Drawing.Point(1128, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 48);
-            this.button1.TabIndex = 32;
-            this.button1.UseVisualStyleBackColor = false;
+            this.lTarih.AutoSize = true;
+            this.lTarih.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(71)))));
+            this.lTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lTarih.ForeColor = System.Drawing.Color.White;
+            this.lTarih.Location = new System.Drawing.Point(14, 194);
+            this.lTarih.Name = "lTarih";
+            this.lTarih.Size = new System.Drawing.Size(122, 20);
+            this.lTarih.TabIndex = 35;
+            this.lTarih.Text = "labelStandart18";
             // 
-            // tNumeric10
+            // lKullanici
             // 
-            this.tNumeric10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric10.Location = new System.Drawing.Point(784, 189);
-            this.tNumeric10.Name = "tNumeric10";
-            this.tNumeric10.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric10.TabIndex = 31;
-            this.tNumeric10.Text = "₺0,00";
-            this.tNumeric10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lKullanici.AutoSize = true;
+            this.lKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lKullanici.Location = new System.Drawing.Point(178, 166);
+            this.lKullanici.Name = "lKullanici";
+            this.lKullanici.Size = new System.Drawing.Size(66, 20);
+            this.lKullanici.TabIndex = 34;
+            this.lKullanici.Text = "Kullanıcı";
+            this.lKullanici.Visible = false;
+            // 
+            // tKartKomisyon
+            // 
+            this.tKartKomisyon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tKartKomisyon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tKartKomisyon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tKartKomisyon.Location = new System.Drawing.Point(784, 189);
+            this.tKartKomisyon.Name = "tKartKomisyon";
+            this.tKartKomisyon.Size = new System.Drawing.Size(115, 19);
+            this.tKartKomisyon.TabIndex = 31;
+            this.tKartKomisyon.Text = "₺0,00";
+            this.tKartKomisyon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelStandart17
             // 
@@ -203,17 +236,17 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart17.TabIndex = 30;
             this.labelStandart17.Text = "Kart Komisyon";
             // 
-            // tNumeric9
+            // tKdvToplam
             // 
-            this.tNumeric9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric9.Location = new System.Drawing.Point(573, 188);
-            this.tNumeric9.Name = "tNumeric9";
-            this.tNumeric9.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric9.TabIndex = 29;
-            this.tNumeric9.Text = "₺0,00";
-            this.tNumeric9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tKdvToplam.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tKdvToplam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tKdvToplam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tKdvToplam.Location = new System.Drawing.Point(573, 188);
+            this.tKdvToplam.Name = "tKdvToplam";
+            this.tKdvToplam.Size = new System.Drawing.Size(115, 19);
+            this.tKdvToplam.TabIndex = 29;
+            this.tKdvToplam.Text = "₺0,00";
+            this.tKdvToplam.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelStandart16
             // 
@@ -237,29 +270,29 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart13.TabIndex = 27;
             this.labelStandart13.Text = "Gider";
             // 
-            // tNumeric7
+            // tGiderKart
             // 
-            this.tNumeric7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric7.Location = new System.Drawing.Point(988, 195);
-            this.tNumeric7.Name = "tNumeric7";
-            this.tNumeric7.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric7.TabIndex = 26;
-            this.tNumeric7.Text = "₺0,00";
-            this.tNumeric7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tGiderKart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tGiderKart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tGiderKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tGiderKart.Location = new System.Drawing.Point(988, 195);
+            this.tGiderKart.Name = "tGiderKart";
+            this.tGiderKart.Size = new System.Drawing.Size(115, 19);
+            this.tGiderKart.TabIndex = 26;
+            this.tGiderKart.Text = "₺0,00";
+            this.tGiderKart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tNumeric8
+            // tGiderNakit
             // 
-            this.tNumeric8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric8.Location = new System.Drawing.Point(988, 166);
-            this.tNumeric8.Name = "tNumeric8";
-            this.tNumeric8.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric8.TabIndex = 25;
-            this.tNumeric8.Text = "₺0,00";
-            this.tNumeric8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tGiderNakit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tGiderNakit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tGiderNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tGiderNakit.Location = new System.Drawing.Point(988, 166);
+            this.tGiderNakit.Name = "tGiderNakit";
+            this.tGiderNakit.Size = new System.Drawing.Size(115, 19);
+            this.tGiderNakit.TabIndex = 25;
+            this.tGiderNakit.Text = "₺0,00";
+            this.tGiderNakit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelStandart14
             // 
@@ -294,29 +327,29 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart10.TabIndex = 22;
             this.labelStandart10.Text = "Gelir";
             // 
-            // tNumeric5
+            // tGelirKart
             // 
-            this.tNumeric5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric5.Location = new System.Drawing.Point(988, 93);
-            this.tNumeric5.Name = "tNumeric5";
-            this.tNumeric5.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric5.TabIndex = 21;
-            this.tNumeric5.Text = "₺0,00";
-            this.tNumeric5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tGelirKart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tGelirKart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tGelirKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tGelirKart.Location = new System.Drawing.Point(988, 93);
+            this.tGelirKart.Name = "tGelirKart";
+            this.tGelirKart.Size = new System.Drawing.Size(115, 19);
+            this.tGelirKart.TabIndex = 21;
+            this.tGelirKart.Text = "₺0,00";
+            this.tGelirKart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tNumeric6
+            // tGelirNakit
             // 
-            this.tNumeric6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric6.Location = new System.Drawing.Point(988, 64);
-            this.tNumeric6.Name = "tNumeric6";
-            this.tNumeric6.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric6.TabIndex = 20;
-            this.tNumeric6.Text = "₺0,00";
-            this.tNumeric6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tGelirNakit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tGelirNakit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tGelirNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tGelirNakit.Location = new System.Drawing.Point(988, 64);
+            this.tGelirNakit.Name = "tGelirNakit";
+            this.tGelirNakit.Size = new System.Drawing.Size(115, 19);
+            this.tGelirNakit.TabIndex = 20;
+            this.tGelirNakit.Text = "₺0,00";
+            this.tGelirNakit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelStandart11
             // 
@@ -351,29 +384,29 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart7.TabIndex = 17;
             this.labelStandart7.Text = "İade Toplam";
             // 
-            // tNumeric3
+            // tIadeKart
             // 
-            this.tNumeric3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric3.Location = new System.Drawing.Point(784, 93);
-            this.tNumeric3.Name = "tNumeric3";
-            this.tNumeric3.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric3.TabIndex = 16;
-            this.tNumeric3.Text = "₺0,00";
-            this.tNumeric3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tIadeKart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tIadeKart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tIadeKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tIadeKart.Location = new System.Drawing.Point(784, 93);
+            this.tIadeKart.Name = "tIadeKart";
+            this.tIadeKart.Size = new System.Drawing.Size(115, 19);
+            this.tIadeKart.TabIndex = 16;
+            this.tIadeKart.Text = "₺0,00";
+            this.tIadeKart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tNumeric4
+            // tIadeNakit
             // 
-            this.tNumeric4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric4.Location = new System.Drawing.Point(784, 63);
-            this.tNumeric4.Name = "tNumeric4";
-            this.tNumeric4.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric4.TabIndex = 15;
-            this.tNumeric4.Text = "₺0,00";
-            this.tNumeric4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tIadeNakit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tIadeNakit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tIadeNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tIadeNakit.Location = new System.Drawing.Point(784, 63);
+            this.tIadeNakit.Name = "tIadeNakit";
+            this.tIadeNakit.Size = new System.Drawing.Size(115, 19);
+            this.tIadeNakit.TabIndex = 15;
+            this.tIadeNakit.Text = "₺0,00";
+            this.tIadeNakit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelStandart8
             // 
@@ -408,29 +441,29 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.labelStandart6.TabIndex = 12;
             this.labelStandart6.Text = "Satış Toplam";
             // 
-            // tNumeric2
+            // tSatisKart
             // 
-            this.tNumeric2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric2.Location = new System.Drawing.Point(573, 93);
-            this.tNumeric2.Name = "tNumeric2";
-            this.tNumeric2.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric2.TabIndex = 11;
-            this.tNumeric2.Text = "₺0,00";
-            this.tNumeric2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tSatisKart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tSatisKart.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tSatisKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tSatisKart.Location = new System.Drawing.Point(573, 93);
+            this.tSatisKart.Name = "tSatisKart";
+            this.tSatisKart.Size = new System.Drawing.Size(115, 19);
+            this.tSatisKart.TabIndex = 11;
+            this.tSatisKart.Text = "₺0,00";
+            this.tSatisKart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tNumeric1
+            // tSatisNakit
             // 
-            this.tNumeric1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tNumeric1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tNumeric1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeric1.Location = new System.Drawing.Point(573, 63);
-            this.tNumeric1.Name = "tNumeric1";
-            this.tNumeric1.Size = new System.Drawing.Size(115, 19);
-            this.tNumeric1.TabIndex = 10;
-            this.tNumeric1.Text = "₺0,00";
-            this.tNumeric1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tSatisNakit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tSatisNakit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tSatisNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tSatisNakit.Location = new System.Drawing.Point(573, 63);
+            this.tSatisNakit.Name = "tSatisNakit";
+            this.tSatisNakit.Size = new System.Drawing.Size(115, 19);
+            this.tSatisNakit.TabIndex = 10;
+            this.tSatisNakit.Text = "₺0,00";
+            this.tSatisNakit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelStandart3
             // 
@@ -470,6 +503,7 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.bGoster.Text = "Göster";
             this.bGoster.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.bGoster.UseVisualStyleBackColor = false;
+            this.bGoster.Click += new System.EventHandler(this.bGoster_Click);
             // 
             // labelStandart5
             // 
@@ -513,30 +547,46 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.gridListe.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.gridListe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridListe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridListe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridListe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridListe.DefaultCellStyle = dataGridViewCellStyle5;
+            this.gridListe.ContextMenuStrip = this.contextMenuStrip1;
+            this.gridListe.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridListe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridListe.EnableHeadersVisualStyles = false;
             this.gridListe.Location = new System.Drawing.Point(0, 0);
             this.gridListe.Name = "gridListe";
             this.gridListe.ReadOnly = true;
-            this.gridListe.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridListe.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridListe.RowHeadersVisible = false;
-            this.gridListe.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridListe.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridListe.RowTemplate.Height = 35;
             this.gridListe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridListe.Size = new System.Drawing.Size(1261, 306);
             this.gridListe.TabIndex = 24;
             this.gridListe.TabStop = false;
+            this.gridListe.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gridListe_CellFormatting);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detayGösterToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // detayGösterToolStripMenuItem
+            // 
+            this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
+            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detayGösterToolStripMenuItem.Text = "Detay Göster";
+            this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
             // 
             // fRapor
             // 
@@ -546,12 +596,14 @@ namespace BarkodluSatis.Sayfalar.Rapor
             this.Controls.Add(this.splitContainer1);
             this.Name = "fRapor";
             this.Text = "Raporlama Sayfası";
+            this.Load += new System.EventHandler(this.fRapor_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridListe)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -559,39 +611,43 @@ namespace BarkodluSatis.Sayfalar.Rapor
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listFiltrelemeTuru;
         private OzelNesneler.labelStandart labelStandart1;
         private OzelNesneler.labelStandart labelStandart6;
-        private OzelNesneler.tNumeric tNumeric2;
-        private OzelNesneler.tNumeric tNumeric1;
+        private OzelNesneler.tNumeric tSatisKart;
+        private OzelNesneler.tNumeric tSatisNakit;
         private OzelNesneler.labelStandart labelStandart3;
         private OzelNesneler.labelStandart labelStandart2;
         private OzelNesneler.buttonResimli bGoster;
-        private System.Windows.Forms.DateTimePicker dataBitisTarih;
+        private System.Windows.Forms.DateTimePicker dateBitisTarih;
         private OzelNesneler.labelStandart labelStandart5;
         private System.Windows.Forms.DateTimePicker dateBaslangicTarih;
         private OzelNesneler.labelStandart labelStandart4;
-        private System.Windows.Forms.Button button1;
-        private OzelNesneler.tNumeric tNumeric10;
+        private System.Windows.Forms.Button bGelirEkle;
+        private OzelNesneler.tNumeric tKartKomisyon;
         private OzelNesneler.labelStandart labelStandart17;
-        private OzelNesneler.tNumeric tNumeric9;
+        private OzelNesneler.tNumeric tKdvToplam;
         private OzelNesneler.labelStandart labelStandart16;
         private OzelNesneler.labelStandart labelStandart13;
-        private OzelNesneler.tNumeric tNumeric7;
-        private OzelNesneler.tNumeric tNumeric8;
+        private OzelNesneler.tNumeric tGiderKart;
+        private OzelNesneler.tNumeric tGiderNakit;
         private OzelNesneler.labelStandart labelStandart14;
         private OzelNesneler.labelStandart labelStandart15;
         private OzelNesneler.labelStandart labelStandart10;
-        private OzelNesneler.tNumeric tNumeric5;
-        private OzelNesneler.tNumeric tNumeric6;
+        private OzelNesneler.tNumeric tGelirKart;
+        private OzelNesneler.tNumeric tGelirNakit;
         private OzelNesneler.labelStandart labelStandart11;
         private OzelNesneler.labelStandart labelStandart12;
         private OzelNesneler.labelStandart labelStandart7;
-        private OzelNesneler.tNumeric tNumeric3;
-        private OzelNesneler.tNumeric tNumeric4;
+        private OzelNesneler.tNumeric tIadeKart;
+        private OzelNesneler.tNumeric tIadeNakit;
         private OzelNesneler.labelStandart labelStandart8;
         private OzelNesneler.labelStandart labelStandart9;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bGiderEkle;
         private OzelNesneler.gridDataViewOzel gridListe;
+        private OzelNesneler.labelStandart lKullanici;
+        private OzelNesneler.labelStandart lTarih;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem detayGösterToolStripMenuItem;
     }
 }

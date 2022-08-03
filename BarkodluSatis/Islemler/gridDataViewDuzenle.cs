@@ -49,6 +49,11 @@ namespace BarkodluSatis.Islemler
                             dataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                             dataGridView.Columns[i].DefaultCellStyle.Format = "C2";
                             break;
+                        case "AlisFiyatToplam":
+                            dataGridView.Columns[i].HeaderText = "Toplam Alış Fiyatı";
+                            dataGridView.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                            dataGridView.Columns[i].DefaultCellStyle.Format = "C2";
+                            break;
 
                         case "SatisFiyat":
                             dataGridView.Columns[i].HeaderText = "Satış Fiyatı";

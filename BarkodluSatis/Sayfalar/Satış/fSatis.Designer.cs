@@ -382,6 +382,7 @@ namespace BarkodluSatis
             this.chSatisIadeIslemi.TabIndex = 4;
             this.chSatisIadeIslemi.Text = "Satış Yapılıyor";
             this.chSatisIadeIslemi.UseVisualStyleBackColor = false;
+            this.chSatisIadeIslemi.CheckedChanged += new System.EventHandler(this.chSatisIadeIslemi_CheckedChanged);
             // 
             // label6
             // 

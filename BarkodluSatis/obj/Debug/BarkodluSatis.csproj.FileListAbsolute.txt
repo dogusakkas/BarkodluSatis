@@ -33,3 +33,5 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.AssemblyReference.cache
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Stok.fStok.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Rapor.fRapor.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Rapor.fGelirGider.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Rapor.fDetayGoster.resources
