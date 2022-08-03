@@ -1,4 +1,5 @@
-﻿using BarkodluSatis.Sayfalar.Satış;
+﻿using BarkodluSatis.Sayfalar.Rapor;
+using BarkodluSatis.Sayfalar.Satış;
 using BarkodluSatis.Sayfalar.Stok;
 using BarkodluSatis.Sayfalar.Ürün;
 using System;
@@ -19,7 +20,7 @@ namespace BarkodluSatis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fStok());
+            Application.Run(new fRapor());
         }
     }
 }

@@ -32,3 +32,4 @@ C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\bin\Debug\Model1.edmx.di
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Satış.fUrunGrubuEkle.resources
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.csproj.AssemblyReference.cache
 C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Stok.fStok.resources
+C:\Users\dogus\source\repos\BarkodluSatis\BarkodluSatis\obj\Debug\BarkodluSatis.Sayfalar.Rapor.fRapor.resources

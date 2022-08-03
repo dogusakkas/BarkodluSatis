@@ -70,6 +70,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Barkod.cs">
@@ -81,6 +82,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sayfalar\Rapor\fRapor.Designer.cs">
+      <DependentUpon>fRapor.cs</DependentUpon>
     </Compile>
     <Compile Include="Sayfalar\Satış\fSatis.cs">
       <SubType>Form</SubType>
@@ -185,6 +192,9 @@
     <Compile Include="UrunGrup.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sayfalar\Rapor\fRapor.resx">
+      <DependentUpon>fRapor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sayfalar\Satış\fSatis.resx">
       <DependentUpon>fSatis.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +273,10 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\add1.png" />
+    <None Include="Resources\search %281%29.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\bookmark.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\enter.png" />
